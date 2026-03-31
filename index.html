@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Nandani Gupta – Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particle-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">NG</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#hero" class="active">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#leetcode">LeetCode</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="#hero" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="#experience" onclick="closeMobileNav()">Experience</a>
+  <a href="#projects" onclick="closeMobileNav()">Projects</a>
+  <a href="#publications" onclick="closeMobileNav()">Publications</a>
+  <a href="#leetcode" onclick="closeMobileNav()">LeetCode</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+  HERO SECTION
+═══════════════════════════════════════════ -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span class="mono">Available for opportunities</span>
+      </div>
+      <h1 class="hero-name">
+        <span class="first">Nandani </span><br/>
+        <span class="last">Gupta</span>
+      </h1>
+      <div class="hero-title">
+        <span class="mono">&lt;</span>
+        <span id="typed-title">Software Developer</span>
+        <span class="mono">/&gt;</span>
+        <span class="typing-cursor"></span>
+      </div>
+      <p class="hero-tagline">
+        Building <strong>elegant digital experiences</strong> with code, creativity, and performance. Passionate about full-stack development, scalable systems, and clean interfaces that matter.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+          View Projects
+        </a>
+        <a href="#contact" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Contact Me
+        </a>
+      </div>
+      <div class="hero-socials">
+        <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="social-link" aria-label="GitHub" title="GitHub">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode" title="LeetCode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+        <a href="mailto:nandanigupta2203@gmail.com" class="social-link" aria-label="Email" title="Email">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-3d-wrapper">
+        <canvas id="hero-3d-canvas"></canvas>
+        <div class="hero-3d-ring">
+          <div class="orbit-dot"></div>
+          <div class="orbit-dot"></div>
+          <div class="orbit-dot"></div>
+        </div>
+        <div class="hero-3d-ring-2"></div>
+        <div class="float-card float-card-1">
+          <div class="float-card-label">Current Status</div>
+          <div class="float-card-value">⚡ Building &amp; Learning</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div class="float-card-label">Focus Area</div>
+          <div class="float-card-value">🚀 Software Developer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-mouse">
+      <div class="scroll-wheel"></div>
+    </div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  ABOUT SECTION
+═══════════════════════════════════════════ -->
+<section id="about">
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">About Me</div>
+      <h2 class="section-title">The Developer <span class="highlight">Behind the Code</span></h2>
+      <p class="section-subtitle">A brief introduction to who I am, what I build, and what drives me every day.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="avatar-card">
+          <!-- ╔══════════════════════════════════════╗
+               ║  PROFILE PHOTO                         ║
+               ║  Replace the src below with your       ║
+               ║  actual photo URL or relative path.    ║
+               ║  Example: src="assets/nandani.jpg"     ║
+               ╚══════════════════════════════════════╝ -->
+          <div class="avatar-photo-wrapper" id="avatar-wrapper">
+            <div class="avatar-glow"></div>
+            <div class="avatar-ring"></div>
+            <div class="avatar-ring-inner"></div>
+            <!-- ▼▼ SWAP THIS src WITH YOUR PHOTO URL ▼▼ -->
+            <img
+              class="avatar-photo"
+              id="avatar-photo"
+              src="https://ui-avatars.com/api/?name=Nandani+Gupta&size=256&background=4f9eff&color=ffffff&bold=true&font-size=0.42&rounded=true"
+              alt="Nandani Gupta – Software Developer"
+              width="136"
+              height="136"
+              loading="eager"
+            />
+            <div class="avatar-initials" id="avatar-initials" aria-hidden="true">NG</div>
+            <span class="avatar-status-badge" title="Available for opportunities" aria-label="Available"></span>
+          </div>
+          <div class="avatar-name">Nandani Gupta</div>
+          <div class="avatar-role">Software Developer</div>
+          <div class="quick-facts">
+            <div class="fact-item">
+              <span class="fact-icon">💡</span>
+              <span class="fact-text">Open Source Enthusiast</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-icon">🧩</span>
+              <span class="fact-text">Creative Problem Solver</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-icon">🏗️</span>
+              <span class="fact-text">Builder of Scalable Systems</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-icon">📚</span>
+              <span class="fact-text">Lifelong Learner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <p class="about-bio">
+          Hi, I'm <strong>Nandani Gupta</strong> — a B.Tech graduate from <strong>IIT Jammu</strong> (Chemical Engineering with a Computer Science focus) who builds backend systems that scale. I currently work as a <strong>Backend Engineer at Lohum Cleantech</strong>, designing AI/RAG platforms that process and semantically retrieve hundreds of government policy documents in real time.
+        </p>
+        <p class="about-bio">
+          My core strength is <strong>backend and systems engineering</strong> — FastAPI microservices, event-driven pipelines with Redis Streams, vector databases, and LangChain-powered RAG architectures. I've also built in C++ (a hospital SaaS platform at Arvon Web Solutions) and Golang (a high-throughput URL shortener), and conducted research at <strong>Hanyang University, South Korea</strong> where I applied Python-based data analysis to sensor calibration.
+        </p>
+        <p class="about-bio">
+          Outside work I push system design skills through projects like a <strong>fraud risk engine</strong> with SHAP explainability and a <strong>multi-elevator scheduling system</strong> in C++. I've solved <strong>450+ LeetCode challenges</strong>, published research in <strong>Springer SCOPUS</strong>, and enjoy building tools that are both technically rigorous and practically useful.
+        </p>
+        <div class="about-highlights">
+          <div class="highlight-card">
+            <div class="highlight-num">Backend Developer</div>
+            <div class="highlight-label">Development Focus</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-num">Open Source</div>
+            <div class="highlight-label">Enthusiast</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-num">Problem</div>
+            <div class="highlight-label">Solver at Heart</div>
+          </div>
+          <div class="highlight-card">
+            <div class="highlight-num">Clean Code</div>
+            <div class="highlight-label">Advocate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  SKILLS SECTION
+═══════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Tech Stack</div>
+      <h2 class="section-title">Skills &amp; <span class="highlight">Technologies</span></h2>
+      <p class="section-subtitle">A curated overview of the tools, languages, and frameworks I work with every day.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-category-card reveal" style="transition-delay:0.05s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">💻</div>
+          <span class="skill-cat-name">Languages</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">🐍 Python</span>
+          <span class="skill-chip">➕ C++</span>
+          <span class="skill-chip">🔵 C</span>
+          <span class="skill-chip">🐹 Golang</span>
+          <span class="skill-chip">🟨 JavaScript</span>
+          <span class="skill-chip">☕ Java</span>
+          <span class="skill-chip">📊 SQL</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.1s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">⚙️</div>
+          <span class="skill-cat-name">Backend &amp; APIs</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">⚡ FastAPI</span>
+          <span class="skill-chip">🟢 Node.js</span>
+          <span class="skill-chip">🚂 Express.js</span>
+          <span class="skill-chip">🔗 REST APIs</span>
+          <span class="skill-chip">🔀 Microservices</span>
+          <span class="skill-chip">⚡ AsyncIO</span>
+          <span class="skill-chip">🌐 Boost.Asio</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.15s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🤖</div>
+          <span class="skill-cat-name">AI / ML</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">🦜 LangChain</span>
+          <span class="skill-chip">🧠 OpenAI API</span>
+          <span class="skill-chip">🔍 RAG</span>
+          <span class="skill-chip">📦 Vector Databases</span>
+          <span class="skill-chip">🤖 Scikit-learn</span>
+          <span class="skill-chip">📊 NumPy / SciPy</span>
+          <span class="skill-chip">🔎 SHAP</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.2s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🗄️</div>
+          <span class="skill-cat-name">Databases</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">🐘 PostgreSQL</span>
+          <span class="skill-chip">🔴 Redis</span>
+          <span class="skill-chip">🔄 Redis Streams</span>
+          <span class="skill-chip">🗃️ SQLAlchemy</span>
+          <span class="skill-chip">📦 Vector DB</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.25s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🎨</div>
+          <span class="skill-cat-name">Frontend</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">⚛️ React.js</span>
+          <span class="skill-chip">🌐 HTML5</span>
+          <span class="skill-chip">🎨 CSS3</span>
+          <span class="skill-chip">🌊 Tailwind</span>
+          <span class="skill-chip">🔌 Socket.io</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.3s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🛠️</div>
+          <span class="skill-cat-name">Tools &amp; DevOps</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">🐋 Docker</span>
+          <span class="skill-chip">🐙 Git</span>
+          <span class="skill-chip">📦 GitHub</span>
+          <span class="skill-chip">🐧 Linux</span>
+          <span class="skill-chip">📬 Postman</span>
+          <span class="skill-chip">🔧 GitHub Actions</span>
+        </div>
+      </div>
+      <div class="skill-category-card reveal" style="transition-delay:0.35s">
+        <div class="skill-cat-header">
+          <div class="skill-cat-icon">🧮</div>
+          <span class="skill-cat-name">Core CS</span>
+        </div>
+        <div class="skill-chips">
+          <span class="skill-chip">🌳 DSA</span>
+          <span class="skill-chip">🏗️ System Design</span>
+          <span class="skill-chip">🔁 OOP</span>
+          <span class="skill-chip">🖥️ Operating Systems</span>
+          <span class="skill-chip">🌐 Computer Networks</span>
+          <span class="skill-chip">📋 Agile / Scrum</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  EXPERIENCE SECTION
+═══════════════════════════════════════════ -->
+<section id="experience">
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Career</div>
+      <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
+      <p class="section-subtitle">My professional journey — building products, growing teams, and shipping impactful solutions.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-role">Backend Engineer – AI/RAG Platform</span>
+            <span class="timeline-date">July 2025 – Present</span>
+          </div>
+          <div class="timeline-company">Lohum Cleantech Pvt. Ltd.</div>
+          <div class="timeline-location">📍 Greater Noida, India</div>
+          <ul class="timeline-points">
+            <li>Designed backend services for a RAG-based policy intelligence platform indexing 500+ government and regulatory documents into a vector database for low-latency semantic retrieval.</li>
+            <li>Engineered an automated ingestion pipeline in Python polling PIB releases hourly (24×/day) with document diffing, chunking, and embedding generation.</li>
+            <li>Built an email ingestion microservice monitoring shared mailboxes, parsing communications, and triggering asynchronous preprocessing and embedding pipelines using AsyncIO.</li>
+            <li>Designed microservice components supporting concurrent query processing and high-availability semantic search systems.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">FastAPI</span>
+            <span class="tech-badge">LangChain</span>
+            <span class="tech-badge">OpenAI API</span>
+            <span class="tech-badge">Vector DB</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">AsyncIO</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="transition-delay:0.15s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-role">Software Developer Intern</span>
+            <span class="timeline-date">May 2024 – July 2024</span>
+          </div>
+          <div class="timeline-company">Arvon Web Solutions</div>
+          <div class="timeline-location">📍 Remote</div>
+          <ul class="timeline-points">
+            <li>Developed backend RESTful APIs in C++ to power a SaaS hospital management platform, building modules for patient records, appointment scheduling, and doctor availability.</li>
+            <li>Designed normalized PostgreSQL schemas with structured JSON-based API responses and referential integrity enforcement.</li>
+            <li>Containerized all backend services with Docker, managed source control via Git, and wrote technical documentation for all API modules ensuring reproducible deployments.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Boost.Asio</span>
+            <span class="tech-badge">REST APIs</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="timeline-item reveal" style="transition-delay:0.3s">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="timeline-meta">
+            <span class="timeline-role">Research Intern</span>
+            <span class="timeline-date">May 2024 – July 2024</span>
+          </div>
+          <div class="timeline-company">Hanyang University</div>
+          <div class="timeline-location">📍 Seoul, South Korea</div>
+          <ul class="timeline-points">
+            <li>Developed a filter paper-based sensor for detecting chloride ions in concrete to assess corrosion risk, optimizing chemical protocols using 0.01 N Silver Nitrate and 0.3 N Nitric Acid.</li>
+            <li>Replaced toxic reagents with safer alternatives and validated sensor performance via calibration curve modelling and error analysis in Python (NumPy, SciPy).</li>
+            <li>Worked within a cross-functional international research team, contributing to experimental design and data-driven analysis pipelines.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">MATLAB</span>
+            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">SciPy</span>
+            <span class="tech-badge">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  PROJECTS SECTION
+═══════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Portfolio</div>
+      <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
+      <p class="section-subtitle">A selection of projects that showcase my technical range, design thinking, and engineering depth.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card featured reveal">
+        <div class="project-thumbnail">
+          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#0a1628 0%,#1a237e 40%,#4a148c 100%);position:absolute;inset:0;"></div>
+          <div class="project-thumb-icon">🛡️</div>
+          <span class="project-tag tag-featured">Featured ⭐</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Fintech Fraud Risk Engine</h3>
+          <p class="project-desc">Real-time fraud detection platform integrating a Logistic Regression model (ROC-AUC 0.98), KYC profiling, behavioral velocity analytics, and SHAP explainability. Architected as modular FastAPI microservices with event-driven ingestion via Redis Streams, SQLAlchemy-based persistence, and Dockerized deployment.</p>
+          <div class="project-techs">
+            <span class="project-tech-chip">Python</span>
+            <span class="project-tech-chip">FastAPI</span>
+            <span class="project-tech-chip">Scikit-learn</span>
+            <span class="project-tech-chip">Redis Streams</span>
+            <span class="project-tech-chip">SQLAlchemy</span>
+            <span class="project-tech-chip">Docker</span>
+            <span class="project-tech-chip">SHAP</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nandani2203/fintech-fraud-risk-engine" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.1s">
+        <div class="project-thumbnail">
+          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#001a33 0%,#00356b 50%,#0052a3 100%);position:absolute;inset:0;"></div>
+          <div class="project-thumb-icon">🔗</div>
+          <span class="project-tag tag-fullstack">Backend</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">High-Scale URL Shortener</h3>
+          <p class="project-desc">High-throughput URL shortening service in Golang using the Gin framework, with Redis-based caching for low-latency redirection and a Bloom Filter for O(1) alias existence checks, eliminating cache penetration under high concurrent traffic.</p>
+          <div class="project-techs">
+            <span class="project-tech-chip">Golang</span>
+            <span class="project-tech-chip">Gin</span>
+            <span class="project-tech-chip">Redis</span>
+            <span class="project-tech-chip">PostgreSQL</span>
+            <span class="project-tech-chip">Bloom Filter</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nandani2203/url_shortener" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.2s">
+        <div class="project-thumbnail">
+          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#1a237e 0%,#283593 50%,#3f51b5 100%);position:absolute;inset:0;"></div>
+          <div class="project-thumb-icon">💬</div>
+          <span class="project-tag tag-fullstack">Full Stack</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">ChatRoom</h3>
+          <p class="project-desc">Real-time chat application enabling instant messaging across multiple clients with persistent room-based conversations, built with a React frontend and a Node.js/Express backend communicating over Socket.io WebSockets.</p>
+          <div class="project-techs">
+            <span class="project-tech-chip">React</span>
+            <span class="project-tech-chip">Node.js</span>
+            <span class="project-tech-chip">Express</span>
+            <span class="project-tech-chip">Socket.io</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nandani2203/ChatRoom" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card reveal" style="transition-delay:0.3s">
+        <div class="project-thumbnail">
+          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#4a0072 0%,#6a1b9a 50%,#8e24aa 100%);position:absolute;inset:0;"></div>
+          <div class="project-thumb-icon">🏢</div>
+          <span class="project-tag tag-ml">Systems</span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Multiple Elevator System</h3>
+          <p class="project-desc">Multi-elevator control system in C++ using OOP principles and a score-based scheduling algorithm to efficiently coordinate concurrent floor requests. Validated with a dedicated unit test suite covering all state-transition and scheduling edge cases.</p>
+          <div class="project-techs">
+            <span class="project-tech-chip">C++</span>
+            <span class="project-tech-chip">OOP</span>
+            <span class="project-tech-chip">Scheduling Algorithms</span>
+            <span class="project-tech-chip">Unit Testing</span>
+            <span class="project-tech-chip">Git</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/nandani2203/Multiple-Elevator-System" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        View All on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  PUBLICATIONS SECTION
+═══════════════════════════════════════════ -->
+<section id="publications">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Publication</div>
+      <h2 class="section-title"><span class="highlight">Publication</span></h2>
+      <p class="section-subtitle">Peer-reviewed research published in international academic venues.</p>
+    </div>
+    <div class="pub-list">
+      <div class="pub-card reveal">
+        <div class="pub-year-badge">2023</div>
+        <div class="pub-content">
+          <h3 class="pub-title">Numerical Investigation of Spray Characteristics of Lean-Burn Gas Turbine Injector</h3>
+          <div class="pub-venue">📖 Springer SCOPUS — Proceedings of the 10th International and 50th National Conference on Fluid Mechanics and Fluid Power (FMFP), December 2023, IIT Jodhpur</div>
+          <p class="pub-abstract">This paper presents a numerical investigation into the spray characteristics of a lean-burn gas turbine injector. The study analyses atomization behaviour, droplet size distribution, and spray penetration patterns under varying operating conditions, contributing to improved combustion efficiency and reduced emissions in next-generation gas turbine systems.</p>
+          <div class="pub-actions">
+            <span class="pub-badge">Springer SCOPUS</span>
+            <a href="https://link.springer.com" target="_blank" rel="noopener" class="btn-sm btn-sm-ghost" style="font-size:0.75rem;">📄 View Paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  LEETCODE SECTION
+═══════════════════════════════════════════ -->
+<section id="leetcode">
+  <div class="glow-orb glow-orb-2"></div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Problem Solving</div>
+      <h2 class="section-title">LeetCode <span class="highlight">Journey</span></h2>
+      <p class="section-subtitle">Sharpening algorithmic thinking and problem-solving skills — one challenge at a time.</p>
+    </div>
+    <div class="leetcode-grid">
+      <div class="leetcode-hero-card reveal">
+        <div class="lc-logo" aria-hidden="true">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </div>
+        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;">@Nandani22</h3>
+        <p class="lc-tagline">Consistent problem solver focused on algorithms, data structures, and analytical thinking. Building a solid foundation in competitive programming.</p>
+        <div class="lc-stats">
+          <div class="lc-stat">
+            <div class="lc-stat-num" id="lc-total">450+</div>
+            <div class="lc-stat-label">Problems Solved</div>
+          </div>
+          <div class="lc-stat">
+            <div class="lc-stat-num" style="background:linear-gradient(135deg,#ffc01e,#ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Top</div>
+            <div class="lc-stat-label" style="color:#ffc01e;">Rated</div>
+          </div>
+          <div class="lc-stat">
+            <div class="lc-stat-num" style="background:linear-gradient(135deg,#22d3ee,#0891b2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">🔥</div>
+            <div class="lc-stat-label">Active Streak</div>
+          </div>
+        </div>
+        <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:0;">
+          View LeetCode Profile
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <div class="lc-diff-card reveal" style="transition-delay:0.15s">
+        <h4 class="lc-diff-title">Problem Difficulty Breakdown</h4>
+        <div class="lc-diff-bar">
+          <div class="lc-diff-bar-header">
+            <span class="diff-easy" style="font-weight:600;">Easy</span>
+            <span style="font-size:0.8rem;color:var(--text-muted);">~130 solved</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill fill-easy" style="width:0%" data-width="72%"></div>
+          </div>
+        </div>
+        <div class="lc-diff-bar">
+          <div class="lc-diff-bar-header">
+            <span class="diff-medium" style="font-weight:600;">Medium</span>
+            <span style="font-size:0.8rem;color:var(--text-muted);">~130 solved</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill fill-medium" style="width:0%" data-width="58%"></div>
+          </div>
+        </div>
+        <div class="lc-diff-bar">
+          <div class="lc-diff-bar-header">
+            <span class="diff-hard" style="font-weight:600;">Hard</span>
+            <span style="font-size:0.8rem;color:var(--text-muted);">~40 solved</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill fill-hard" style="width:0%" data-width="25%"></div>
+          </div>
+        </div>
+        <div style="margin-top:28px;padding:18px;background:var(--code-bg);border-radius:12px;border:1px solid var(--border-color);">
+          <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:8px;">// Approach Philosophy</div>
+          <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.65;font-style:italic;">"Every problem is an opportunity to think differently. I focus on understanding patterns over memorizing solutions."</p>
+        </div>
+      </div>
+      <div class="lc-topics reveal" style="transition-delay:0.25s">
+        <h4 style="font-size:1rem;font-weight:700;">Core Topics Mastered</h4>
+        <div class="topic-chips">
+          <span class="topic-chip">Arrays &amp; Hashing</span>
+          <span class="topic-chip">Two Pointers</span>
+          <span class="topic-chip">Sliding Window</span>
+          <span class="topic-chip">Stack</span>
+          <span class="topic-chip">Binary Search</span>
+          <span class="topic-chip">Linked List</span>
+          <span class="topic-chip">Trees</span>
+          <span class="topic-chip">Tries</span>
+          <span class="topic-chip">Backtracking</span>
+          <span class="topic-chip">Graphs (BFS/DFS)</span>
+          <span class="topic-chip">Dynamic Programming</span>
+          <span class="topic-chip">Greedy</span>
+          <span class="topic-chip">Heap / Priority Queue</span>
+          <span class="topic-chip">Bit Manipulation</span>
+          <span class="topic-chip">Math &amp; Intervals</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  CONTACT SECTION
+═══════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px;">
+      <div class="section-tag">Get In Touch</div>
+      <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+      <p class="section-subtitle">Open to exciting opportunities, collaborations, and meaningful product work.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <p class="contact-intro">Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open. I'd love to connect and create something great together.</p>
+        <div class="contact-links">
+          <a href="mailto:nandanigupta2203@gmail.com" class="contact-link-item">
+            <div class="contact-link-icon">📧</div>
+            <div class="contact-link-text">
+              <div class="contact-link-type">Email</div>
+              <div class="contact-link-value">nandanigupta2203@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-link-icon" style="background:linear-gradient(135deg,#0077b5,#006097);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-type">LinkedIn</div>
+              <div class="contact-link-value">nandani-gupta</div>
+            </div>
+          </a>
+          <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-link-icon" style="background:linear-gradient(135deg,#24292e,#404448);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-type">GitHub</div>
+              <div class="contact-link-value">nandani2203</div>
+            </div>
+          </a>
+          <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="contact-link-item">
+            <div class="contact-link-icon" style="background:linear-gradient(135deg,#ffa116,#ff6b35);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+            </div>
+            <div class="contact-link-text">
+              <div class="contact-link-type">LeetCode</div>
+              <div class="contact-link-value">Nandani22</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal-right">
+        <h3 class="form-title">Send a Message</h3>
+        <form id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required/>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Collaboration / Opportunity / Hello!" required/>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="send-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+          <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:11px;color:#10b981;font-size:0.875rem;text-align:center;">
+            ✅ Message sent! I'll get back to you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  FOOTER
+═══════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Nandani Gupta</div>
+      <p>Software Developer crafting elegant digital experiences with passion and precision.</p>
+      <div class="footer-socials" style="margin-top:18px;">
+        <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="footer-social-btn" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="LeetCode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+        <a href="mailto:nandanigupta2203@gmail.com" class="footer-social-btn" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>More</h5>
+      <ul>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#leetcode">LeetCode</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://github.com/nandani2203" target="_blank" rel="noopener">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Nandani Gupta. All rights reserved.</span>
+    <span>Built with passion, code &amp; ☕</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+  SCRIPTS — loaded in dependency order
+═══════════════════════════════════════════ -->
+<script src="particles.js"></script>
+<script src="hero3d.js"></script>
+<script src="avatar.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
