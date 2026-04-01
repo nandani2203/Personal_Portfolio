@@ -129,6 +129,18 @@ h1,h2,h3,h4,h5{
   background:var(--accent-glow);
 }
 .nav-right{display:flex;align-items:center;gap:12px;}
+.resume-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:10px;
+  font-size:0.82rem;font-weight:600;
+  background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  color:#fff;border:none;
+  box-shadow:0 4px 15px var(--accent-glow);
+  transition:all 0.3s ease;
+  white-space:nowrap;
+}
+.resume-btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px var(--accent-glow);}
+@media(max-width:768px){.resume-btn span,.resume-btn{font-size:0.78rem;padding:7px 12px;}}
 .theme-toggle{
   width:42px;height:42px;border-radius:50%;border:1px solid var(--border-color);
   background:var(--bg-card);display:flex;align-items:center;justify-content:center;
