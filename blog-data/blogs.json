@@ -1,13 +1,13 @@
 [
   {
-    "title": "Two Sum – Optimal Hashmap Approach",
-    "slug": "two-sum",
+    "title": "Maximum Depth of Binary Tree – The Castle Explorer",
+    "slug": "maximum-depth-of-binary-tree",
     "difficulty": "Easy",
-    "tags": ["Array", "Hashing"],
-    "date": "2026-04-01",
-    "readTime": "5 min",
+    "tags": ["Tree", "DFS", "Recursion"],
+    "date": "2026-04-08",
+    "readTime": "8 min",
     "thumbnail": "",
-    "description": "Move beyond brute force — learn how a single hashmap pass solves Two Sum in O(n) time with elegant simplicity."
+    "description": "Follow Recursiva the royal explorer through the Binary Castle — and discover why a 3-line recursive DFS is all you need to find a tree's maximum depth."
   },
   {
     "title": "Binary Search – From Template to Mastery",
