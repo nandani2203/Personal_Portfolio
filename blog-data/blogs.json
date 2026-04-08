@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Two Sum – Optimal Hashmap Approach",
+    "slug": "two-sum",
+    "difficulty": "Easy",
+    "tags": ["Array", "Hashing"],
+    "date": "2026-04-01",
+    "readTime": "5 min",
+    "thumbnail": "",
+    "description": "Move beyond brute force — learn how a single hashmap pass solves Two Sum in O(n) time with elegant simplicity."
+  },
+  {
+    "title": "Binary Search – From Template to Mastery",
+    "slug": "binary-search",
+    "difficulty": "Medium",
+    "tags": ["Binary Search", "Array"],
+    "date": "2026-04-05",
+    "readTime": "8 min",
+    "thumbnail": "",
+    "description": "One universal binary search template that handles every variant — left bound, right bound, rotated arrays, and more."
+  },
+  {
+    "title": "Longest Palindromic Substring – Expand Around Centre",
+    "slug": "longest-palindromic-substring",
+    "difficulty": "Medium",
+    "tags": ["String", "DP"],
+    "date": "2026-04-07",
+    "readTime": "7 min",
+    "thumbnail": "",
+    "description": "Understand the expand-around-centre technique and why it beats the classic DP table approach in practice."
+  },
+  {
+    "title": "Word Ladder – BFS on an Implicit Graph",
+    "slug": "word-ladder",
+    "difficulty": "Hard",
+    "tags": ["Graph", "BFS", "String"],
+    "date": "2026-04-08",
+    "readTime": "10 min",
+    "thumbnail": "",
+    "description": "Model word transformations as graph edges and use BFS to guarantee the shortest transformation sequence."
+  }
+]

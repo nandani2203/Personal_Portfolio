@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog – Nandani Gupta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+/*──────────────────────────────────────────────
+  BLOG PAGE STYLES
+──────────────────────────────────────────────*/
+.blog-hero{
+  padding:clamp(100px,14vh,140px) clamp(16px,4vw,80px) clamp(48px,6vh,72px);
+  background:var(--gradient-hero);
+  text-align:center;position:relative;overflow:hidden;
+}
+.blog-hero-tag{
+  display:inline-block;
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.75rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--accent-primary);background:var(--accent-glow);
+  border:1px solid rgba(79,158,255,0.2);
+  padding:5px 14px;border-radius:20px;margin-bottom:18px;
+}
+.blog-hero h1{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(32px,5vw,58px);font-weight:800;
+  letter-spacing:-0.03em;margin-bottom:14px;
+}
+.blog-hero h1 span{
+  background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.blog-hero p{
+  font-size:clamp(15px,1.4vw,18px);color:var(--text-secondary);
+  max-width:520px;margin:0 auto;line-height:1.7;
+}
+.blog-hero-glow-1{
+  position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(79,158,255,0.12),transparent 70%);
+  top:-20%;right:5%;filter:blur(60px);pointer-events:none;
+}
+.blog-hero-glow-2{
+  position:absolute;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(167,139,250,0.1),transparent 70%);
+  bottom:-10%;left:5%;filter:blur(60px);pointer-events:none;
+}
+
+/*──────────────────────────────────────────────
+  CONTROLS
+──────────────────────────────────────────────*/
+.blog-controls{
+  max-width:1200px;margin:0 auto;
+  padding:40px clamp(16px,4vw,80px) 0;
+  display:flex;flex-wrap:wrap;gap:16px;align-items:center;
+}
+.blog-search-wrap{
+  flex:1;min-width:220px;position:relative;
+}
+.blog-search-wrap svg{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  color:var(--text-muted);pointer-events:none;
+}
+.blog-search{
+  width:100%;padding:11px 16px 11px 42px;
+  background:var(--bg-card);border:1px solid var(--border-color);
+  border-radius:12px;color:var(--text-primary);
+  font-family:'Inter',sans-serif;font-size:0.9rem;outline:none;
+  backdrop-filter:blur(12px);
+  transition:border-color 0.25s,box-shadow 0.25s;
+}
+.blog-search:focus{border-color:var(--accent-primary);box-shadow:0 0 0 3px var(--accent-glow);}
+.blog-search::placeholder{color:var(--text-muted);}
+.filter-group{display:flex;gap:8px;flex-wrap:wrap;}
+.filter-btn{
+  padding:9px 16px;border-radius:10px;font-size:0.8rem;font-weight:600;
+  border:1px solid var(--border-color);background:var(--bg-card);
+  color:var(--text-secondary);cursor:pointer;
+  font-family:'Inter',sans-serif;
+  transition:all 0.25s ease;backdrop-filter:blur(10px);
+}
+.filter-btn:hover,.filter-btn.active{
+  border-color:var(--accent-primary);background:var(--accent-glow);
+  color:var(--accent-primary);
+}
+.filter-btn.diff-easy.active{border-color:#00b8a3;background:rgba(0,184,163,0.12);color:#00b8a3;}
+.filter-btn.diff-medium.active{border-color:#ffc01e;background:rgba(255,192,30,0.12);color:#ffc01e;}
+.filter-btn.diff-hard.active{border-color:#ff375f;background:rgba(255,55,95,0.12);color:#ff375f;}
+.blog-count{
+  font-size:0.82rem;color:var(--text-muted);
+  font-family:'JetBrains Mono',monospace;white-space:nowrap;
+}
+
+/*──────────────────────────────────────────────
+  BLOG GRID
+──────────────────────────────────────────────*/
+.blog-section{
+  max-width:1200px;margin:0 auto;
+  padding:32px clamp(16px,4vw,80px) 80px;
+}
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+@media(max-width:1024px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:640px){.blog-grid{grid-template-columns:1fr;}}
+
+/*──────────────────────────────────────────────
+  BLOG CARD
+──────────────────────────────────────────────*/
+.blog-card{
+  background:var(--bg-card);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--border-color);
+  border-radius:20px;overflow:hidden;
+  display:flex;flex-direction:column;
+  cursor:pointer;
+  transition:all 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+  transform-style:preserve-3d;
+  text-decoration:none;color:inherit;
+}
+.blog-card:hover{
+  transform:translateY(-8px);
+  border-color:var(--accent-primary);
+  box-shadow:0 20px 40px var(--accent-glow),0 8px 32px rgba(0,0,0,0.3);
+}
+.blog-card-thumb{
+  height:140px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+.blog-card-thumb img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform 0.5s ease;
+}
+.blog-card:hover .blog-card-thumb img{transform:scale(1.05);}
+.blog-card-thumb-bg{
+  position:absolute;inset:0;
+}
+.blog-card-thumb-icon{
+  font-size:2.8rem;position:relative;z-index:1;
+}
+.diff-badge{
+  position:absolute;top:12px;right:12px;z-index:2;
+  font-size:0.68rem;font-family:'JetBrains Mono',monospace;
+  font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:3px 10px;border-radius:6px;
+}
+.diff-badge.easy{background:rgba(0,184,163,0.2);color:#00b8a3;border:1px solid rgba(0,184,163,0.4);}
+.diff-badge.medium{background:rgba(255,192,30,0.15);color:#ffc01e;border:1px solid rgba(255,192,30,0.35);}
+.diff-badge.hard{background:rgba(255,55,95,0.15);color:#ff375f;border:1px solid rgba(255,55,95,0.35);}
+.blog-card-body{padding:20px;flex:1;display:flex;flex-direction:column;gap:10px;}
+.blog-card-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.blog-tag{
+  font-size:0.7rem;font-family:'JetBrains Mono',monospace;font-weight:500;
+  padding:2px 9px;border-radius:5px;
+  background:var(--code-bg);border:1px solid var(--border-color);
+  color:var(--accent-primary);
+}
+.blog-card-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1rem;font-weight:700;line-height:1.35;
+  color:var(--text-primary);
+}
+.blog-card-desc{
+  font-size:0.83rem;color:var(--text-secondary);line-height:1.6;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+  flex:1;
+}
+.blog-card-footer{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:auto;padding-top:12px;
+  border-top:1px solid var(--border-color);
+  font-size:0.75rem;color:var(--text-muted);
+  font-family:'JetBrains Mono',monospace;
+}
+.blog-card-footer span{display:flex;align-items:center;gap:5px;}
+
+/*──────────────────────────────────────────────
+  EMPTY STATE
+──────────────────────────────────────────────*/
+.blog-empty{
+  grid-column:1/-1;text-align:center;padding:80px 20px;
+  color:var(--text-muted);
+}
+.blog-empty svg{margin:0 auto 16px;opacity:0.4;}
+.blog-empty p{font-size:1rem;}
+
+/*──────────────────────────────────────────────
+  CARD STAGGER ANIMATION
+──────────────────────────────────────────────*/
+@keyframes card-in{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.blog-card{animation:card-in 0.5s ease both;}
+</style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html">NG</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#leetcode">LeetCode</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#skills">Skills</a>
+  <a href="index.html#experience">Experience</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="index.html#leetcode">LeetCode</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<div class="blog-hero">
+  <div class="blog-hero-glow-1"></div>
+  <div class="blog-hero-glow-2"></div>
+  <div class="blog-hero-tag">DSA × Problem Solving</div>
+  <h1>My <span>Tech Blog</span></h1>
+  <p>Deep dives into algorithms, data structures, and the intuition behind every solution — written the way I wish someone had explained them to me.</p>
+</div>
+
+<!-- CONTROLS -->
+<div class="blog-controls">
+  <div class="blog-search-wrap">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+    <input class="blog-search" id="blog-search" type="text" placeholder="Search by title or tag…" autocomplete="off"/>
+  </div>
+  <div class="filter-group">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn diff-easy" data-filter="Easy">Easy</button>
+    <button class="filter-btn diff-medium" data-filter="Medium">Medium</button>
+    <button class="filter-btn diff-hard" data-filter="Hard">Hard</button>
+  </div>
+  <span class="blog-count" id="blog-count"></span>
+</div>
+
+<!-- BLOG GRID -->
+<div class="blog-section">
+  <div class="blog-grid" id="blog-grid">
+    <!-- Cards injected by JS -->
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Nandani Gupta</div>
+      <p>Software Developer crafting elegant digital experiences with passion and precision.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Connect</h5>
+      <ul>
+        <li><a href="https://github.com/nandani2203" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener">LeetCode</a></li>
+        <li><a href="mailto:nandanigupta2203@gmail.com">Email</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Nandani Gupta. All rights reserved.</span>
+    <span>Built with passion, code &amp; ♥</span>
+  </div>
+</footer>
+
+<script>
+/*──────────────────────────────────────────────
+  THEME TOGGLE
+──────────────────────────────────────────────*/
+const html = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('portfolio-theme') || (prefersDark ? 'dark' : 'light');
+html.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('portfolio-theme', next);
+  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+  themeToggle.style.transform = 'rotate(360deg) scale(1.1)';
+  setTimeout(() => themeToggle.style.transform = '', 400);
+  initParticles();
+});
+
+/*──────────────────────────────────────────────
+  MOBILE NAV
+──────────────────────────────────────────────*/
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+/*──────────────────────────────────────────────
+  NAVBAR SCROLL
+──────────────────────────────────────────────*/
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/*──────────────────────────────────────────────
+  PARTICLES (reused from main.js logic)
+──────────────────────────────────────────────*/
+const particleCanvas = document.getElementById('particle-canvas');
+const pCtx = particleCanvas.getContext('2d');
+let particles = [];
+function resizePC() {
+  particleCanvas.width = window.innerWidth;
+  particleCanvas.height = window.innerHeight;
+}
+resizePC();
+window.addEventListener('resize', resizePC);
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * particleCanvas.width;
+    this.y = Math.random() * particleCanvas.height;
+    this.size = Math.random() * 2 + 0.5;
+    this.speedX = (Math.random() - 0.5) * 0.3;
+    this.speedY = (Math.random() - 0.5) * 0.3;
+    this.opacity = Math.random() * 0.4 + 0.1;
+  }
+  update() {
+    this.x += this.speedX; this.y += this.speedY;
+    if (this.x < 0 || this.x > particleCanvas.width || this.y < 0 || this.y > particleCanvas.height) this.reset();
+  }
+  draw() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    pCtx.beginPath();
+    pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    pCtx.fillStyle = isDark ? `rgba(79,158,255,${this.opacity})` : `rgba(67,56,202,${this.opacity * 0.6})`;
+    pCtx.fill();
+  }
+}
+function initParticles() { particles = Array.from({ length: 60 }, () => new Particle()); }
+initParticles();
+(function animateP() {
+  pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
+  particles.forEach(p => { p.update(); p.draw(); });
+  requestAnimationFrame(animateP);
+})();
+
+/*──────────────────────────────────────────────
+  BLOG LOADING & RENDERING
+──────────────────────────────────────────────*/
+const THUMB_GRADIENTS = [
+  'linear-gradient(135deg,#003300 0%,#004d40 50%,#00695c 100%)',
+  'linear-gradient(135deg,#001a33 0%,#00356b 50%,#0052a3 100%)',
+  'linear-gradient(135deg,#1a237e 0%,#283593 50%,#3f51b5 100%)',
+  'linear-gradient(135deg,#4a0072 0%,#6a1b9a 50%,#8e24aa 100%)',
+  'linear-gradient(135deg,#0d1f3c 0%,#1a3a6e 50%,#2d5fa6 100%)',
+  'linear-gradient(135deg,#1b0000 0%,#5c1a00 50%,#8b2500 100%)',
+];
+const THUMB_ICONS = ['💡', '🔍', '🌳', '📊', '⚡', '🧩', '🎯', '🔗', '🏗️', '🧮'];
+
+let allBlogs = [];
+let activeFilter = 'all';
+let searchQuery = '';
+
+async function loadBlogs() {
+  try {
+    const res = await fetch('blog-data/blogs.json');
+    allBlogs = await res.json();
+    renderCards(allBlogs);
+  } catch (e) {
+    document.getElementById('blog-grid').innerHTML =
+      '<div class="blog-empty"><p>Could not load blog posts.</p></div>';
+  }
+}
+
+function renderCards(blogs) {
+  const grid = document.getElementById('blog-grid');
+  const count = document.getElementById('blog-count');
+  if (!blogs.length) {
+    grid.innerHTML = `<div class="blog-empty">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <p>No posts match your search.</p>
+    </div>`;
+    count.textContent = '0 posts';
+    return;
+  }
+  count.textContent = `${blogs.length} post${blogs.length !== 1 ? 's' : ''}`;
+  grid.innerHTML = blogs.map((blog, i) => {
+    const grad = THUMB_GRADIENTS[i % THUMB_GRADIENTS.length];
+    const icon = THUMB_ICONS[i % THUMB_ICONS.length];
+    const diffClass = blog.difficulty.toLowerCase();
+    const tagsHtml = blog.tags.map(t => `<span class="blog-tag">${t}</span>`).join('');
+    const thumbContent = blog.thumbnail
+      ? `<img src="${blog.thumbnail}" alt="${blog.title}" loading="lazy"/>`
+      : `<div class="blog-card-thumb-bg" style="background:${grad};position:absolute;inset:0;"></div>
+         <span class="blog-card-thumb-icon">${icon}</span>`;
+    return `<a class="blog-card" href="blog-post.html?slug=${blog.slug}" style="animation-delay:${i * 0.07}s">
+      <div class="blog-card-thumb">
+        ${thumbContent}
+        <span class="diff-badge ${diffClass}">${blog.difficulty}</span>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-card-tags">${tagsHtml}</div>
+        <div class="blog-card-title">${blog.title}</div>
+        <div class="blog-card-desc">${blog.description}</div>
+        <div class="blog-card-footer">
+          <span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            ${formatDate(blog.date)}
+          </span>
+          <span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            ${blog.readTime}
+          </span>
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+}
+
+function applyFilters() {
+  let filtered = allBlogs;
+  if (activeFilter !== 'all') {
+    filtered = filtered.filter(b => b.difficulty === activeFilter);
+  }
+  if (searchQuery) {
+    const q = searchQuery.toLowerCase();
+    filtered = filtered.filter(b =>
+      b.title.toLowerCase().includes(q) ||
+      b.tags.some(t => t.toLowerCase().includes(q)) ||
+      b.description.toLowerCase().includes(q)
+    );
+  }
+  renderCards(filtered);
+}
+
+// Filter buttons
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+// Search
+document.getElementById('blog-search').addEventListener('input', e => {
+  searchQuery = e.target.value.trim();
+  applyFilters();
+});
+
+loadBlogs();
+</script>
+</body>
+</html>

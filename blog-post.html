@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Blog Post – Nandani Gupta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css"/>
+<!-- Prism.js for syntax highlighting -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css"/>
+<style>
+/*──────────────────────────────────────────────
+  BLOG POST PAGE
+──────────────────────────────────────────────*/
+body{padding-top:68px;}
+
+/* Breadcrumb */
+.breadcrumb{
+  max-width:1100px;margin:0 auto;
+  padding:20px clamp(16px,4vw,48px) 0;
+  display:flex;align-items:center;gap:8px;
+  font-size:0.8rem;color:var(--text-muted);
+  font-family:'JetBrains Mono',monospace;
+}
+.breadcrumb a{color:var(--text-muted);transition:color 0.2s;}
+.breadcrumb a:hover{color:var(--accent-primary);}
+.breadcrumb svg{flex-shrink:0;}
+
+/* Layout */
+.post-layout{
+  max-width:1100px;margin:0 auto;
+  padding:28px clamp(16px,4vw,48px) 80px;
+  display:grid;grid-template-columns:1fr 260px;
+  gap:40px;align-items:start;
+}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;}}
+
+/* Article */
+.post-article{}
+
+/* Post header */
+.post-header{margin-bottom:32px;}
+.post-meta-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;}
+.post-diff-badge{
+  font-size:0.72rem;font-family:'JetBrains Mono',monospace;
+  font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;
+}
+.post-diff-badge.easy{background:rgba(0,184,163,0.15);color:#00b8a3;border:1px solid rgba(0,184,163,0.3);}
+.post-diff-badge.medium{background:rgba(255,192,30,0.12);color:#ffc01e;border:1px solid rgba(255,192,30,0.3);}
+.post-diff-badge.hard{background:rgba(255,55,95,0.12);color:#ff375f;border:1px solid rgba(255,55,95,0.3);}
+.post-tag{
+  font-size:0.72rem;font-family:'JetBrains Mono',monospace;font-weight:500;
+  padding:3px 10px;border-radius:5px;
+  background:var(--code-bg);border:1px solid var(--border-color);
+  color:var(--accent-primary);
+}
+.post-title{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(24px,4vw,40px);font-weight:800;
+  letter-spacing:-0.025em;line-height:1.15;
+  margin-bottom:16px;color:var(--text-primary);
+}
+.post-meta-bottom{
+  display:flex;gap:20px;flex-wrap:wrap;
+  font-size:0.78rem;color:var(--text-muted);
+  font-family:'JetBrains Mono',monospace;
+}
+.post-meta-bottom span{display:flex;align-items:center;gap:6px;}
+.post-divider{
+  height:1px;background:var(--border-color);
+  margin:24px 0;border:none;
+}
+
+/* Markdown content styles */
+.post-content{
+  font-size:clamp(15px,1.2vw,17px);
+  color:var(--text-secondary);
+  line-height:1.8;
+}
+.post-content h1,.post-content h2,.post-content h3,.post-content h4{
+  font-family:'Space Grotesk',sans-serif;
+  color:var(--text-primary);
+  margin:2em 0 0.6em;letter-spacing:-0.02em;
+}
+.post-content h1{font-size:1.8rem;font-weight:800;border-bottom:2px solid var(--border-color);padding-bottom:10px;}
+.post-content h2{font-size:1.35rem;font-weight:700;}
+.post-content h3{font-size:1.1rem;font-weight:600;}
+.post-content h2::before{
+  content:'';display:inline-block;
+  width:4px;height:1em;border-radius:2px;
+  background:linear-gradient(135deg,var(--accent-primary),var(--accent-secondary));
+  margin-right:10px;vertical-align:middle;
+}
+.post-content p{margin:0 0 1.2em;}
+.post-content strong{color:var(--text-primary);font-weight:600;}
+.post-content a{color:var(--accent-primary);text-decoration:underline;text-underline-offset:3px;}
+.post-content ul,.post-content ol{padding-left:1.4em;margin:0 0 1.2em;}
+.post-content li{margin-bottom:0.4em;}
+.post-content li::marker{color:var(--accent-primary);}
+.post-content blockquote{
+  border-left:3px solid var(--accent-primary);
+  padding:12px 20px;margin:1.5em 0;
+  background:var(--code-bg);border-radius:0 10px 10px 0;
+  color:var(--text-secondary);font-style:italic;
+}
+/* Inline code */
+.post-content code:not([class]){
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.85em;
+  background:var(--code-bg);
+  border:1px solid var(--border-color);
+  padding:2px 6px;border-radius:5px;
+  color:var(--accent-cyan);
+}
+/* Tables */
+.post-content table{
+  width:100%;border-collapse:collapse;margin:1.5em 0;font-size:0.88rem;
+}
+.post-content th{
+  background:var(--bg-card);color:var(--text-primary);
+  padding:10px 16px;text-align:left;font-weight:600;
+  border-bottom:2px solid var(--border-color);
+}
+.post-content td{
+  padding:10px 16px;border-bottom:1px solid var(--border-color);
+  color:var(--text-secondary);
+}
+.post-content tr:hover td{background:rgba(79,158,255,0.04);}
+/* Images */
+.post-content img{
+  max-width:100%;border-radius:12px;margin:1.5em 0;
+  border:1px solid var(--border-color);
+}
+/* HR */
+.post-content hr{border:none;border-top:1px solid var(--border-color);margin:2em 0;}
+
+/* Code block wrapper */
+.code-block-wrap{position:relative;margin:1.5em 0;}
+.copy-btn{
+  position:absolute;top:10px;right:10px;z-index:10;
+  padding:5px 12px;border-radius:7px;font-size:0.72rem;
+  font-family:'JetBrains Mono',monospace;font-weight:600;
+  background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  color:#ccc;cursor:pointer;transition:all 0.2s;
+}
+.copy-btn:hover{background:rgba(79,158,255,0.2);border-color:var(--accent-primary);color:#fff;}
+.copy-btn.copied{background:rgba(0,184,163,0.2);border-color:#00b8a3;color:#00b8a3;}
+
+/* Prism overrides */
+.post-content pre[class*="language-"]{
+  border-radius:12px;
+  border:1px solid var(--border-color);
+  margin:0;font-size:0.875rem;
+  background:#0d1117 !important;
+}
+[data-theme="light"] .post-content pre[class*="language-"]{background:#1e1e2e !important;}
+.post-content pre[class*="language-"] code{font-family:'JetBrains Mono',monospace !important;}
+
+/*──────────────────────────────────────────────
+  STICKY TOC SIDEBAR
+──────────────────────────────────────────────*/
+.toc-sidebar{
+  position:sticky;top:84px;
+  background:var(--bg-card);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--border-color);
+  border-radius:16px;padding:20px;
+  max-height:calc(100vh - 100px);
+  overflow-y:auto;
+}
+.toc-sidebar::-webkit-scrollbar{width:4px;}
+.toc-sidebar::-webkit-scrollbar-thumb{background:var(--accent-primary);border-radius:2px;}
+.toc-title{
+  font-size:0.72rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.1em;
+  color:var(--text-muted);margin-bottom:14px;
+  font-family:'JetBrains Mono',monospace;
+}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}
+.toc-list a{
+  display:block;padding:5px 10px;border-radius:7px;
+  font-size:0.8rem;color:var(--text-secondary);
+  border-left:2px solid transparent;
+  transition:all 0.2s;
+  text-decoration:none;
+}
+.toc-list a:hover{color:var(--accent-primary);background:var(--accent-glow);border-left-color:var(--accent-primary);}
+.toc-list a.active{color:var(--accent-primary);border-left-color:var(--accent-primary);background:var(--accent-glow);}
+.toc-list .toc-h3{padding-left:22px;font-size:0.75rem;}
+@media(max-width:900px){.toc-sidebar{display:none;}}
+
+/* Back button */
+.back-btn{
+  display:inline-flex;align-items:center;gap:7px;
+  margin-top:40px;padding:10px 20px;border-radius:10px;
+  font-size:0.85rem;font-weight:600;
+  background:var(--bg-card);border:1px solid var(--border-color);
+  color:var(--text-secondary);
+  transition:all 0.25s;
+}
+.back-btn:hover{border-color:var(--accent-primary);color:var(--accent-primary);}
+
+/* Loading state */
+.post-loading{
+  text-align:center;padding:80px 20px;color:var(--text-muted);
+}
+.post-loading .spinner{
+  width:36px;height:36px;border:3px solid var(--border-color);
+  border-top-color:var(--accent-primary);
+  border-radius:50%;animation:spin 0.8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+
+/* 404 state */
+.post-404{
+  text-align:center;padding:80px 20px;color:var(--text-muted);
+}
+.post-404 h2{font-size:1.5rem;color:var(--text-primary);margin-bottom:8px;}
+</style>
+</head>
+<body>
+
+<canvas id="particle-canvas"></canvas>
+
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <a class="nav-logo" href="index.html">NG</a>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="index.html#experience">Experience</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="index.html#publications">Publications</a></li>
+    <li><a href="index.html#leetcode">LeetCode</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#skills">Skills</a>
+  <a href="index.html#experience">Experience</a>
+  <a href="index.html#projects">Projects</a>
+  <a href="index.html#publications">Publications</a>
+  <a href="index.html#leetcode">LeetCode</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="index.html#contact">Contact</a>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <a href="index.html">Home</a>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+  <a href="blog.html">Blog</a>
+  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 18 6-6-6-6"/></svg>
+  <span id="breadcrumb-title">Loading…</span>
+</nav>
+
+<!-- MAIN POST LAYOUT -->
+<div class="post-layout" id="post-layout">
+  <!-- Article -->
+  <article class="post-article" id="post-article">
+    <div class="post-loading" id="post-loading">
+      <div class="spinner"></div>
+      <p>Loading post…</p>
+    </div>
+  </article>
+  <!-- TOC Sidebar -->
+  <aside class="toc-sidebar" id="toc-sidebar" aria-label="Table of contents">
+    <div class="toc-title">Contents</div>
+    <ul class="toc-list" id="toc-list"></ul>
+  </aside>
+</div>
+
+<!-- Prism.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+<!-- marked.js for Markdown rendering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+
+<script>
+/*──────────────────────────────────────────────
+  THEME + NAV
+──────────────────────────────────────────────*/
+const html = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('portfolio-theme') || (prefersDark ? 'dark' : 'light');
+html.setAttribute('data-theme', savedTheme);
+themeToggle.textContent = savedTheme === 'dark' ? '🌙' : '☀️';
+themeToggle.addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('portfolio-theme', next);
+  themeToggle.textContent = next === 'dark' ? '🌙' : '☀️';
+  themeToggle.style.transform = 'rotate(360deg) scale(1.1)';
+  setTimeout(() => themeToggle.style.transform = '', 400);
+});
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+hamburger.addEventListener('click', () => {
+  const isOpen = mobileNav.classList.toggle('open');
+  hamburger.classList.toggle('open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive: true });
+
+/*──────────────────────────────────────────────
+  PARTICLES
+──────────────────────────────────────────────*/
+const particleCanvas = document.getElementById('particle-canvas');
+const pCtx = particleCanvas.getContext('2d');
+let particles = [];
+function resizePC() { particleCanvas.width = window.innerWidth; particleCanvas.height = window.innerHeight; }
+resizePC(); window.addEventListener('resize', resizePC);
+class Particle {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * particleCanvas.width; this.y = Math.random() * particleCanvas.height;
+    this.size = Math.random() * 2 + 0.5; this.speedX = (Math.random() - 0.5) * 0.25; this.speedY = (Math.random() - 0.5) * 0.25;
+    this.opacity = Math.random() * 0.3 + 0.08;
+  }
+  update() {
+    this.x += this.speedX; this.y += this.speedY;
+    if (this.x < 0 || this.x > particleCanvas.width || this.y < 0 || this.y > particleCanvas.height) this.reset();
+  }
+  draw() {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    pCtx.beginPath(); pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    pCtx.fillStyle = isDark ? `rgba(79,158,255,${this.opacity})` : `rgba(67,56,202,${this.opacity * 0.5})`; pCtx.fill();
+  }
+}
+particles = Array.from({ length: 50 }, () => new Particle());
+(function animateP() { pCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height); particles.forEach(p => { p.update(); p.draw(); }); requestAnimationFrame(animateP); })();
+
+/*──────────────────────────────────────────────
+  BLOG POST LOADER
+──────────────────────────────────────────────*/
+const slug = new URLSearchParams(window.location.search).get('slug');
+
+function showError(msg) {
+  document.getElementById('post-loading').remove();
+  document.getElementById('post-article').innerHTML = `
+    <div class="post-404">
+      <h2>Post not found</h2>
+      <p>${msg}</p>
+      <a href="blog.html" class="back-btn" style="display:inline-flex;margin-top:20px;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+        Back to Blog
+      </a>
+    </div>`;
+  document.getElementById('toc-sidebar').style.display = 'none';
+}
+
+async function loadPost() {
+  if (!slug) { showError('No post slug provided.'); return; }
+  try {
+    const [metaRes, mdRes] = await Promise.all([
+      fetch('blog-data/blogs.json'),
+      fetch(`blogs/${slug}.md`)
+    ]);
+    if (!mdRes.ok) { showError(`Could not load "blogs/${slug}.md".`); return; }
+    const allBlogs = await metaRes.json();
+    const meta = allBlogs.find(b => b.slug === slug);
+    const mdText = await mdRes.text();
+    renderPost(meta, mdText);
+  } catch (e) {
+    showError('Network error loading post.');
+  }
+}
+
+function renderPost(meta, mdText) {
+  // Configure marked
+  marked.setOptions({ breaks: true, gfm: true });
+
+  // Strip the H1 from markdown (we render it in the header)
+  const mdBody = mdText.replace(/^#\s+.+\n/, '').trim();
+  const htmlContent = marked.parse(mdBody);
+
+  // Update page title
+  const title = meta ? meta.title : slug;
+  document.title = `${title} – Nandani Gupta`;
+  document.getElementById('breadcrumb-title').textContent = title;
+
+  // Difficulty
+  const diff = meta ? meta.difficulty.toLowerCase() : '';
+  const diffBadge = meta ? `<span class="post-diff-badge ${diff}">${meta.difficulty}</span>` : '';
+  const tags = meta ? meta.tags.map(t => `<span class="post-tag">${t}</span>`).join('') : '';
+  const date = meta ? formatDate(meta.date) : '';
+  const readTime = meta ? meta.readTime : '';
+
+  const article = document.getElementById('post-article');
+  article.innerHTML = `
+    <div class="post-header">
+      <div class="post-meta-top">${diffBadge}${tags}</div>
+      <h1 class="post-title">${title}</h1>
+      <div class="post-meta-bottom">
+        ${date ? `<span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>${date}</span>` : ''}
+        ${readTime ? `<span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${readTime} read</span>` : ''}
+      </div>
+    </div>
+    <hr class="post-divider"/>
+    <div class="post-content" id="post-content">${htmlContent}</div>
+    <hr class="post-divider" style="margin-top:48px;"/>
+    <a href="blog.html" class="back-btn">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+      Back to Blog
+    </a>`;
+
+  // Wrap code blocks and add copy buttons
+  document.querySelectorAll('.post-content pre').forEach(pre => {
+    const wrap = document.createElement('div');
+    wrap.className = 'code-block-wrap';
+    pre.parentNode.insertBefore(wrap, pre);
+    wrap.appendChild(pre);
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'Copy';
+    btn.addEventListener('click', () => {
+      const code = pre.querySelector('code');
+      navigator.clipboard.writeText(code ? code.innerText : pre.innerText).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+      });
+    });
+    wrap.appendChild(btn);
+  });
+
+  // Syntax highlight
+  Prism.highlightAll();
+
+  // Build TOC
+  buildTOC();
+}
+
+function formatDate(str) {
+  const d = new Date(str);
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+/*──────────────────────────────────────────────
+  TABLE OF CONTENTS
+──────────────────────────────────────────────*/
+function buildTOC() {
+  const headings = document.querySelectorAll('.post-content h2, .post-content h3');
+  const tocList = document.getElementById('toc-list');
+  if (!headings.length) { document.getElementById('toc-sidebar').style.display = 'none'; return; }
+
+  headings.forEach((h, i) => {
+    const id = `heading-${i}`;
+    h.id = id;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = `#${id}`;
+    a.textContent = h.textContent.replace(/^[🧠🚀💻📊⚠✅📚🖼]+\s*/, '');
+    a.className = h.tagName === 'H3' ? 'toc-h3' : '';
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    li.appendChild(a);
+    tocList.appendChild(li);
+  });
+
+  // Highlight active heading on scroll
+  const tocLinks = tocList.querySelectorAll('a');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        tocLinks.forEach(a => a.classList.remove('active'));
+        const active = tocList.querySelector(`a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '0px 0px -70% 0px', threshold: 0 });
+  headings.forEach(h => observer.observe(h));
+}
+
+loadPost();
+</script>
+</body>
+</html>
