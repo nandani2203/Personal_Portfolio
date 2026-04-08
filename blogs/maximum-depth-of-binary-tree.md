@@ -1,6 +1,6 @@
 # Maximum Depth of Binary Tree
 
-## 🤔 What Are We Solving?
+## What Are We Solving?
 
 Okay so you're given a binary tree. That's it. That's the whole input.
 
@@ -22,7 +22,7 @@ That's the whole problem. Now let's talk about *how* to think about it.
 
 ---
 
-## 🧠 Intuition
+## Intuition
 
 Here's the honest question: do you *really* need to trace every root-to-leaf path and measure them all?
 
@@ -42,7 +42,7 @@ This is the classic *"trust the recursion"* moment. You don't need to know how t
 
 ---
 
-## 🚀 Approach
+## Approach
 
 Here's exactly what the algorithm does, step by step:
 
@@ -57,7 +57,7 @@ Here's exactly what the algorithm does, step by step:
 
 ---
 
-## 💻 Code
+## Code
 
 Three lines. That's genuinely all it takes. Same logic:
 
@@ -118,7 +118,7 @@ All three are the exact same idea. Pick your language, internalize the shape of 
 
 ---
 
-## 📊 Time & Space Complexity
+## Time & Space Complexity
 
 | | Complexity |
 |---|---|
@@ -129,7 +129,7 @@ The space complexity is the sneaky one here. A perfectly balanced tree? Stack de
 
 ---
 
-## ⚠️ Edge Cases
+## Edge Cases
 
 Worth thinking about before you hit submit:
 
@@ -140,7 +140,7 @@ Worth thinking about before you hit submit:
 
 ---
 
-## ✅ Key Takeaways
+## Key Takeaways
 
 A few things worth burning into memory before moving on:
 

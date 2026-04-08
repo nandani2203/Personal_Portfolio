@@ -10,33 +10,13 @@
     "description": "A fun, visual walkthrough of one of the most elegant recursive patterns in tree problems — once this clicks, a whole family of problems opens up."
   },
   {
-    "title": "Binary Search – From Template to Mastery",
-    "slug": "binary-search",
-    "difficulty": "Medium",
-    "tags": ["Binary Search", "Array"],
-    "date": "2026-04-05",
+    "title": "Diameter of Binary Tree | Leetcode 543",
+    "slug": "diameter-of-binary-tree",
+    "difficulty": "Easy",
+    "tags": ["Tree", "DFS", "Recursion"],
+    "date": "2026-04-08",
     "readTime": "8 min",
     "thumbnail": "",
-    "description": "One universal binary search template that handles every variant — left bound, right bound, rotated arrays, and more."
-  },
-  {
-    "title": "Longest Palindromic Substring – Expand Around Centre",
-    "slug": "longest-palindromic-substring",
-    "difficulty": "Medium",
-    "tags": ["String", "DP"],
-    "date": "2026-04-07",
-    "readTime": "7 min",
-    "thumbnail": "",
-    "description": "Understand the expand-around-centre technique and why it beats the classic DP table approach in practice."
-  },
-  {
-    "title": "Word Ladder – BFS on an Implicit Graph",
-    "slug": "word-ladder",
-    "difficulty": "Hard",
-    "tags": ["Graph", "BFS", "String"],
-    "date": "2026-04-08",
-    "readTime": "10 min",
-    "thumbnail": "",
-    "description": "Model word transformations as graph edges and use BFS to guarantee the shortest transformation sequence."
+    "description": "Max depth with a scoreboard — learn how one DFS pass quietly tracks the longest path in the tree while computing depths on the way up."
   }
 ]
