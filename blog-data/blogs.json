@@ -1,6 +1,6 @@
 [
   {
-    "title": "Maximum Depth of Binary Tree",
+    "title": "Maximum Depth of Binary Tree | Leetcode 140",
     "slug": "maximum-depth-of-binary-tree",
     "difficulty": "Easy",
     "tags": ["Tree", "DFS", "Recursion"],
