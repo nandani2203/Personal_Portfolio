@@ -1,4 +1,4 @@
-# Maximum Depth of Binary Tree – The Castle Explorer
+# Maximum Depth of Binary Tree
 
 ## 🤔 What Are We Solving?
 
