@@ -9,6 +9,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"/>
+<script data-goatcounter="https://nandanigupta.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 
@@ -26,7 +29,6 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#publications">Publications</a></li>
     <li><a href="#leetcode">LeetCode</a></li>
-    <li><a href="blog.html">Blog</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -46,7 +48,6 @@
   <a href="#projects" onclick="closeMobileNav()">Projects</a>
   <a href="#publications" onclick="closeMobileNav()">Publications</a>
   <a href="#leetcode" onclick="closeMobileNav()">LeetCode</a>
-  <a href="blog.html" onclick="closeMobileNav()">Blog</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
 </div>
 
@@ -71,9 +72,6 @@
         <span class="mono">/&gt;</span>
         <span class="typing-cursor"></span>
       </div>
-      <p class="hero-tagline">
-        Building <strong>elegant digital experiences</strong> with code, creativity, and performance. Passionate about full-stack development, scalable systems, and clean interfaces that matter.
-      </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
@@ -110,11 +108,11 @@
         <div class="hero-3d-ring-2"></div>
         <div class="float-card float-card-1">
           <div class="float-card-label">Current Status</div>
-          <div class="float-card-value">⚡ Building &amp; Learning</div>
+          <div class="float-card-value">Building &amp; Learning</div>
         </div>
         <div class="float-card float-card-2">
           <div class="float-card-label">Focus Area</div>
-          <div class="float-card-value">🚀 Software Developer</div>
+          <div class="float-card-value">Software Developer</div>
         </div>
       </div>
     </div>
@@ -142,44 +140,51 @@
     <div class="about-grid">
       <div class="about-visual reveal-left">
         <div class="avatar-card">
-          <!-- ╔══════════════════════════════════════╗
-               ║  PROFILE PHOTO                         ║
-               ║  Replace the src below with your       ║
-               ║  actual photo URL or relative path.    ║
-               ║  Example: src="assets/nandani.jpg"     ║
-               ╚══════════════════════════════════════╝ -->
-          <div class="avatar-photo-wrapper" id="avatar-wrapper">
-            <img
-              class="avatar-photo"
-              id="avatar-photo"
-              src="Resume_Photo.jpeg"
-              alt="Nandani Gupta – Software Developer"
-              loading="eager"
-            />
+          <img
+            class="avatar-photo"
+            id="avatar-photo"
+            src="Resume_Photo.jpeg"
+            alt="Nandani Gupta – Software Developer"
+            loading="eager"
+          />
+          <div class="avatar-overlay">
+            <div class="avatar-name">Nandani Gupta</div>
+            <div class="avatar-role">Software Developer</div>
             <span class="avatar-status-badge" title="Available for opportunities" aria-label="Available"></span>
           </div>
-          <div class="avatar-name">Nandani Gupta</div>
-          <div class="avatar-role">Software Developer</div>
         </div>
       </div>
       <div class="about-content reveal-right">
         <p class="about-bio">
-          Hi, I'm <strong>Nandani Gupta</strong> — a <strong>Software Engineer from IIT Jammu</strong> 
-          who loves building things that actually work in production. I spend most of my time at the 
-          intersection of <strong>AI and backend engineering</strong>, building intelligent pipelines 
-          and distributed systems that scale. I pick up new stacks fast, take full ownership of 
-          everything I ship, and genuinely enjoy going from zero to something real.
+          Hi, I'm Nandani Gupta. I'm a <strong>Software Engineer</strong> from <strong>IIT Jammu</strong> who loves building things that actually work in production. I spend most of my time at the intersection of <strong>AI and backend engineering</strong>, building intelligent pipelines and distributed systems that scale. I pick up new stacks fast, take full ownership of everything I ship, and genuinely enjoy going from zero to something real.
         </p>
-
         <p class="about-bio">
-          From <strong>AI/LLM platforms and fintech systems</strong> to <strong>healthcare SaaS and 
-          low-level systems programming</strong> — I've built across domains and there's always 
-          something new in the works. I've done research at <strong>Hanyang University, South 
-          Korea</strong>, solved <strong>450+ problems</strong> on LeetCode, and published in 
-          <strong>Springer SCOPUS</strong> — the kind of things that show up when you're genuinely 
-          curious and don't stop halfway. If something here resonates — <strong>let's connect and 
-          build something great together.</strong>
+          From <strong>AI/LLM platforms</strong> and <strong>fintech systems</strong> to <strong>healthcare SaaS</strong> and <strong>low-level systems programming</strong>, I've built across domains and there's always something new in the works. I've done research at Hanyang University, South Korea, solved 400+ problems on LeetCode, and published in Springer SCOPUS, the kind of things that show up when you're genuinely curious and don't stop halfway.
         </p>
+        <p class="about-bio">
+          <strong>Curiosity</strong> keeps me going. There's always a harder problem to solve, a better way to design something, a new stack worth learning. That energy is what drives everything I do. If something here resonates. Let's connect and build something great together.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+  STATS STRIP
+═══════════════════════════════════════════ -->
+<section id="stats" class="stats-strip">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-num" id="stat-views">—</div>
+        <div class="stat-label">Website Views</div>
+        <div class="stat-meta"><span class="live-dot"></span>Live · All time</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal" style="transition-delay:0.12s">
+        <div class="stat-num" id="stat-repos">—</div>
+        <div class="stat-label">Public Repos</div>
+        <div class="stat-meta"><span class="live-dot"></span>Live · GitHub</div>
       </div>
     </div>
   </div>
@@ -190,107 +195,73 @@
 ═══════════════════════════════════════════ -->
 <section id="skills">
   <div class="container">
-    <div class="reveal" style="margin-bottom:56px;">
-      <div class="section-tag">Tech Stack</div>
+    <div class="reveal" style="margin-bottom:64px;">
+      <div class="section-tag">My Tools</div>
       <h2 class="section-title">Skills &amp; <span class="highlight">Technologies</span></h2>
-      <p class="section-subtitle">A curated overview of the tools, languages, and frameworks I work with every day.</p>
+      <p class="section-subtitle">Technologies I use to build robust, scalable systems — from backend infrastructure to AI pipelines.</p>
     </div>
-    <div class="skills-grid">
-      <div class="skill-category-card reveal" style="transition-delay:0.05s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">💻</div>
-          <span class="skill-cat-name">Languages</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">🐍 Python</span>
-          <span class="skill-chip">➕ C++</span>
-          <span class="skill-chip">🔵 C</span>
-          <span class="skill-chip">🟨 JavaScript</span>
-          <span class="skill-chip">☕ Java</span>
-          <span class="skill-chip">📊 SQL</span>
-        </div>
-      </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.1s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">⚙️</div>
-          <span class="skill-cat-name">Backend &amp; APIs</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">⚡ FastAPI</span>
-          <span class="skill-chip">🟢 Node.js</span>
-          <span class="skill-chip">🚂 Express.js</span>
-          <span class="skill-chip">🔗 REST APIs</span>
-          <span class="skill-chip">🔀 Microservices</span>
-          <span class="skill-chip">⚡ AsyncIO</span>
-          <span class="skill-chip">🌐 Boost.Asio</span>
+    <div class="sk-cards">
+
+      <!-- Card 1: Languages -->
+      <div class="sk-card reveal">
+        <h3 class="sk-card-title">Languages</h3>
+        <div class="sk-icons-grid">
+          <div class="sk-icon-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+          <div class="sk-icon-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
+          <div class="sk-icon-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+          <div class="sk-icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+          <div class="sk-icon-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#4f9eff,#3b82f6);">SQL</div><span>SQL</span></div>
         </div>
       </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.15s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🤖</div>
-          <span class="skill-cat-name">AI / ML</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">🦜 LangChain</span>
-          <span class="skill-chip">🧠 OpenAI API</span>
-          <span class="skill-chip">🔍 RAG</span>
-          <span class="skill-chip">📦 Vector Databases</span>
-          <span class="skill-chip">🤖 Scikit-learn</span>
-          <span class="skill-chip">📊 NumPy / SciPy</span>
-          <span class="skill-chip">🔎 SHAP</span>
-        </div>
-      </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.2s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🗄️</div>
-          <span class="skill-cat-name">Databases</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">🐘 PostgreSQL</span>
-          <span class="skill-chip">🔴 Redis</span>
-          <span class="skill-chip">🔄 Redis Streams</span>
-          <span class="skill-chip">🗃️ SQLAlchemy</span>
-          <span class="skill-chip">📦 Vector DB</span>
+
+      <!-- Card 2: Backend & APIs -->
+      <div class="sk-card reveal" style="transition-delay:0.08s">
+        <h3 class="sk-card-title">Backend &amp; APIs</h3>
+        <div class="sk-icons-grid">
+          <div class="sk-icon-item"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+          <div class="sk-icon-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
+          <div class="sk-icon-item sk-invert"><i class="devicon-express-original"></i><span>Express</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">API</div><span>REST APIs</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#22d3ee,#0891b2);">MS</div><span>Microservices</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">AIO</div><span>AsyncIO</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#e879f9,#c026d3);">BA</div><span>Boost.Asio</span></div>
         </div>
       </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.25s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🎨</div>
-          <span class="skill-cat-name">Frontend</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">⚛️ React.js</span>
-          <span class="skill-chip">🌐 HTML5</span>
-          <span class="skill-chip">🎨 CSS3</span>
-          <span class="skill-chip">🔌 Socket.io</span>
-        </div>
-      </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.3s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🛠️</div>
-          <span class="skill-cat-name">Tools &amp; DevOps</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">🐋 Docker</span>
-          <span class="skill-chip">🐙 Git</span>
-          <span class="skill-chip">📦 GitHub</span>
-          <span class="skill-chip">🔧 GitHub Actions</span>
+
+      <!-- Card 3: AI / ML -->
+      <div class="sk-card reveal" style="transition-delay:0.16s">
+        <h3 class="sk-card-title">AI &amp; ML</h3>
+        <div class="sk-icons-grid">
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#34d399,#059669);">LC</div><span>LangChain</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">RAG</div><span>RAG</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#22d3ee,#0891b2);">OAI</div><span>OpenAI API</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#818cf8,#6366f1);">VDB</div><span>Vector DBs</span></div>
+          <div class="sk-icon-item"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-learn</span></div>
+          <div class="sk-icon-item"><i class="devicon-numpy-plain colored"></i><span>NumPy/SciPy</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">SH</div><span>SHAP</span></div>
         </div>
       </div>
-      <div class="skill-category-card reveal" style="transition-delay:0.35s">
-        <div class="skill-cat-header">
-          <div class="skill-cat-icon">🧮</div>
-          <span class="skill-cat-name">Core CS</span>
-        </div>
-        <div class="skill-chips">
-          <span class="skill-chip">🌳 DSA</span>
-          <span class="skill-chip">🏗️ System Design</span>
-          <span class="skill-chip">🔁 OOP</span>
-          <span class="skill-chip">🖥️ Operating Systems</span>
-          <span class="skill-chip">🌐 Computer Networks</span>
-          <span class="skill-chip">📋 Agile / Scrum</span>
+
+      <!-- Card 4: Infra & Tools -->
+      <div class="sk-card reveal" style="transition-delay:0.24s">
+        <h3 class="sk-card-title">Infra &amp; Tools</h3>
+        <div class="sk-icons-grid">
+          <div class="sk-icon-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
+          <div class="sk-icon-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#ef4444,#dc2626);">RS</div><span>Redis Streams</span></div>
+          <div class="sk-icon-item"><i class="devicon-sqlalchemy-plain colored"></i><span>SQLAlchemy</span></div>
+          <div class="sk-icon-item"><i class="devicon-react-original colored"></i><span>React.js</span></div>
+          <div class="sk-icon-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
+          <div class="sk-icon-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
+          <div class="sk-icon-item sk-invert"><i class="devicon-socketio-original"></i><span>Socket.io</span></div>
+          <div class="sk-icon-item"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+          <div class="sk-icon-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+          <div class="sk-icon-item sk-invert"><i class="devicon-github-original"></i><span>GitHub</span></div>
+          <div class="sk-icon-item"><i class="devicon-githubactions-plain colored"></i><span>GH Actions</span></div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -317,10 +288,9 @@
           <div class="timeline-company">Lohum Cleantech Pvt. Ltd.</div>
           <div class="timeline-location">📍 Greater Noida, India</div>
           <ul class="timeline-points">
-            <li>Designed backend services for a RAG-based policy intelligence platform indexing 500+ government and regulatory documents into a vector database for low-latency semantic retrieval.</li>
-            <li>Engineered an automated ingestion pipeline in Python polling PIB releases hourly (24×/day) with document diffing, chunking, and embedding generation.</li>
-            <li>Built an email ingestion microservice monitoring shared mailboxes, parsing communications, and triggering asynchronous preprocessing and embedding pipelines using AsyncIO.</li>
-            <li>Designed microservice components supporting concurrent query processing and high-availability semantic search systems.</li>
+            <li> Designed backend services for an enterprise RAG-based policy intelligence platform indexing 500+ government releases into a vector database for low-latency semantic retrieval, and engineered an automated ingestion pipeline in Python polling PIB releases hourly (24×/day) with document diffing, chunking, and embedding generation.</li>
+            <li> Built an email ingestion microservice monitoring shared mailboxes, parsing communications, and triggering asynchronous preprocessing and embedding pipelines using AsyncIO, improving indexing throughput and automating policy intelligence surfacing</li>
+            <li> Designed microservice components supporting concurrent query processing and high-availability semantic search systems.</li>
           </ul>
           <div class="tech-stack-badges">
             <span class="tech-badge">Python</span>
@@ -343,9 +313,8 @@
           <div class="timeline-company">Arvon Web Solutions</div>
           <div class="timeline-location">📍 Remote</div>
           <ul class="timeline-points">
-            <li>Developed backend RESTful APIs in C++ to power a SaaS hospital management platform, building modules for patient records, appointment scheduling, and doctor availability.</li>
-            <li>Designed normalized PostgreSQL schemas with structured JSON-based API responses and referential integrity enforcement.</li>
-            <li>Containerized all backend services with Docker, managed source control via Git, and wrote technical documentation for all API modules ensuring reproducible deployments.</li>
+            <li> Built backend RESTful APIs in C++ using Boost.Asio to power a SaaS hospital management platform, implemented patient records, appointment scheduling, and doctor availability modules, and designed normalized PostgreSQL schemas with structured JSON-based API responses.</li>
+            <li>Wrote automated data validation scripts and executed unit and integration tests across all endpoints, and wrote technical documentation for all API modules ensuring reproducible deployments and consistent engineering standards</li>
           </ul>
           <div class="tech-stack-badges">
             <span class="tech-badge">C++</span>
@@ -367,9 +336,7 @@
           <div class="timeline-company">Hanyang University</div>
           <div class="timeline-location">📍 Seoul, South Korea</div>
           <ul class="timeline-points">
-            <li>Developed a filter paper-based sensor for detecting chloride ions in concrete to assess corrosion risk, optimizing chemical protocols using 0.01 N Silver Nitrate and 0.3 N Nitric Acid.</li>
-            <li>Replaced toxic reagents with safer alternatives and validated sensor performance via calibration curve modelling and error analysis in Python (NumPy, SciPy).</li>
-            <li>Worked within a cross-functional international research team, contributing to experimental design and data-driven analysis pipelines.</li>
+            <li>Developed a filter paper-based sensor for chloride ion detection in concrete to assess corrosion risk, optimized protocols using 0.01 N Silver Nitrate and 0.3 N Nitric Acid, replaced toxic reagents with safer alternatives, and validated sensor performance via calibration curve modelling and error analysis in Python (NumPy, SciPy) within a cross-functional international research team</li>
           </ul>
           <div class="tech-stack-badges">
             <span class="tech-badge">Python</span>
@@ -549,7 +516,7 @@
         <p class="lc-tagline">Consistent problem solver focused on algorithms, data structures, and analytical thinking. Building a solid foundation in competitive programming.</p>
         <div class="lc-stats">
           <div class="lc-stat">
-            <div class="lc-stat-num" id="lc-total">300+</div>
+            <div class="lc-stat-num" id="lc-total">400+</div>
             <div class="lc-stat-label">Problems Solved</div>
           </div>
           <div class="lc-stat">
@@ -636,7 +603,7 @@
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal-left">
-        <p class="contact-intro">Whether you have a project in mind, want to collaborate, or just want to say hello — my inbox is always open. I'd love to connect and create something great together.</p>
+        <p class="contact-intro">Whether you have a project in mind, want to collaborate or just want to say hello, my inbox is always open. I'd love to connect and create something great together.</p>
         <div class="contact-links">
           <a href="mailto:nandanigupta2203@gmail.com" class="contact-link-item">
             <div class="contact-link-icon">📧</div>
@@ -765,6 +732,7 @@
 <script src="hero3d.js"></script>
 <script src="avatar.js"></script>
 <script src="main.js"></script>
+<script src="stats.js"></script>
 
 </body>
 </html>
