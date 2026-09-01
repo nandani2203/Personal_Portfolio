@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Experience – Nandani Gupta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="styles.css?v=6"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"/>
+<script data-goatcounter="https://nandanigupta.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<!-- PARTICLE CANVAS -->
+<canvas id="particle-canvas"></canvas>
+<!-- NAVBAR -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">NG</div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="experience.html" class="active">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="leetcode.html">LeetCode</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">🌙</button>
+    <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#about" onclick="closeMobileNav()">About</a>
+  <a href="index.html#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="experience.html" onclick="closeMobileNav()">Experience</a>
+  <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+  <a href="publications.html" onclick="closeMobileNav()">Publications</a>
+  <a href="leetcode.html" onclick="closeMobileNav()">LeetCode</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<section id="experience">
+  <div class="glow-orb glow-orb-1"></div>
+  <div class="container">
+    <div class="reveal" style="margin-bottom:40px;">
+      <div class="section-tag">Career</div>
+      <h2 class="section-title">Experience <span class="highlight">&amp; Education</span></h2>
+      <p class="section-subtitle">My professional journey — building products, growing teams, and shipping impactful solutions.</p>
+    </div>
+    <div class="exp-summary reveal">
+      <div class="exp-summary-item">
+        <div class="exp-summary-num">2+</div>
+        <div class="exp-summary-label">Years Since First Role</div>
+      </div>
+      <div class="exp-summary-item">
+        <div class="exp-summary-num">2</div>
+        <div class="exp-summary-label">Countries</div>
+      </div>
+    </div>
+    <div class="exp-list">
+      <div class="exp-card reveal">
+        <div class="exp-card-accent" style="background:linear-gradient(180deg,#4f9eff,#3b82f6);"></div>
+        <div class="exp-card-body">
+          <div class="exp-card-header">
+            <div class="exp-card-icon" title="Timble Technologies">💳</div>
+            <div>
+              <div class="exp-card-role">Software Engineer<span class="timeline-current-badge">Current</span></div>
+              <div class="exp-card-company">Timble Technologies<span class="exp-card-location">📍 Gurgaon, India</span></div>
+            </div>
+            <div class="exp-card-date">May 2026 – Present · 4+ mos</div>
+          </div>
+          <ul class="timeline-points">
+            <li>Consolidated 11 duplicate AES-256 encryption plugins into one config-driven Apache APISIX plugin, turning client encryption onboarding into an Admin API config change instead of a code deploy.</li>
+            <li>Built a Redis-to-PostgreSQL wallet sync task (Django/Celery) that rebuilds live balances on cache failure, removing a single point of failure in the prepaid billing flow.</li>
+            <li>Refactored a hardcoded per-vendor response plugin on every route's critical path into a data-driven engine, decoupling vendor onboarding from shared code changes.</li>
+            <li>Eliminated silent data loss in transaction logging and a PII-in-cache exposure, safeguarding billing integrity and customer data.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">Django</span>
+            <span class="tech-badge">Celery</span>
+            <span class="tech-badge">Apache APISIX</span>
+            <span class="tech-badge">Lua</span>
+            <span class="tech-badge">Redis</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">etcd</span>
+            <span class="tech-badge">AES-256</span>
+            <span class="tech-badge">Docker</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card reveal" style="transition-delay:0.08s">
+        <div class="exp-card-accent" style="background:linear-gradient(180deg,#34d399,#059669);"></div>
+        <div class="exp-card-body">
+          <div class="exp-card-header">
+            <div class="exp-card-icon" title="Lohum Cleantech">♻️</div>
+            <div>
+              <div class="exp-card-role">Software Engineer</div>
+              <div class="exp-card-company">Lohum Cleantech Pvt. Ltd.<span class="exp-card-location">📍 Greater Noida, India</span></div>
+            </div>
+            <div class="exp-card-date">July 2025 – April 2026 · 10 mos</div>
+          </div>
+          <ul class="timeline-points">
+            <li>Engineered a RAG ingestion pipeline using AsyncIO to poll 50+ PIB government releases hourly (24×/day), parsed HTML to plain text via BeautifulSoup, applied fixed-size chunking, generated vector embeddings via the OpenAI Embeddings API, and pushed to ChromaDB; implemented section-level diffing using SHA-256 with Base62 encoding and timestamp comparison to retrieve only modified sections, optimizing compute and storage.</li>
+            <li>Built the query serving pipeline using Redis for cached key-value matches and ChromaDB for top-k semantic retrieval, reducing manual policy polling time by 70% for the operations team.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">AsyncIO</span>
+            <span class="tech-badge">BeautifulSoup</span>
+            <span class="tech-badge">OpenAI Embeddings</span>
+            <span class="tech-badge">ChromaDB</span>
+            <span class="tech-badge">Redis</span>
+            <span class="tech-badge">FastAPI</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card reveal" style="transition-delay:0.16s">
+        <div class="exp-card-accent" style="background:linear-gradient(180deg,#ec4899,#db2777);"></div>
+        <div class="exp-card-body">
+          <div class="exp-card-header">
+            <div class="exp-card-icon" title="Arvon Web Solutions">🏥</div>
+            <div>
+              <div class="exp-card-role">Software Developer Intern</div>
+              <div class="exp-card-company">Arvon Web Solutions<span class="exp-card-location">📍 Remote</span></div>
+            </div>
+            <div class="exp-card-date">May 2024 – July 2024 · 3 mos</div>
+          </div>
+          <ul class="timeline-points">
+            <li>Built backend RESTful APIs in C++ using Boost.Asio to power a SaaS hospital management platform, implemented patient records, appointment scheduling, and doctor availability modules, and designed normalized PostgreSQL schemas with structured JSON-based API responses and referential integrity enforcement.</li>
+            <li>Containerized all backend services with Docker, managed source control via Git, and wrote technical documentation for all API modules ensuring reproducible deployments and consistent engineering standards.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">C++</span>
+            <span class="tech-badge">Boost.Asio</span>
+            <span class="tech-badge">REST APIs</span>
+            <span class="tech-badge">PostgreSQL</span>
+            <span class="tech-badge">Docker</span>
+            <span class="tech-badge">Git</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card reveal" style="transition-delay:0.24s">
+        <div class="exp-card-accent" style="background:linear-gradient(180deg,#22d3ee,#0891b2);"></div>
+        <div class="exp-card-body">
+          <div class="exp-card-header">
+            <div class="exp-card-icon" title="Hanyang University">🔬</div>
+            <div>
+              <div class="exp-card-role">Research Intern</div>
+              <div class="exp-card-company">Hanyang University<span class="exp-card-location">📍 Seoul, South Korea</span></div>
+            </div>
+            <div class="exp-card-date">May 2024 – July 2024 · 3 mos</div>
+          </div>
+          <ul class="timeline-points">
+            <li>Developed a filter paper-based sensor for chloride ion detection in concrete to assess corrosion risk, optimized chemical protocols using 0.01 N Silver Nitrate and 0.3 N Nitric Acid, replaced toxic reagents with safer alternatives, and validated sensor performance via calibration curve modelling and sensitivity error analysis in Python (NumPy, SciPy) within a cross-functional international research team.</li>
+          </ul>
+          <div class="tech-stack-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">MATLAB</span>
+            <span class="tech-badge">NumPy</span>
+            <span class="tech-badge">SciPy</span>
+            <span class="tech-badge">Data Analysis</span>
+          </div>
+        </div>
+      </div>
+      <div class="exp-card exp-card-education reveal" style="transition-delay:0.32s">
+        <div class="exp-card-accent" style="background:linear-gradient(180deg,#f59e0b,#d97706);"></div>
+        <div class="exp-card-body">
+          <div class="exp-card-header">
+            <div class="exp-card-icon" title="IIT Jammu">🎓</div>
+            <div>
+              <div class="exp-card-role">Bachelor of Technology, Chemical Engineering</div>
+              <div class="exp-card-company">Indian Institute of Technology (IIT) Jammu<span class="exp-card-location">📍 Jammu, India</span></div>
+            </div>
+            <div class="exp-card-date">2021 – 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo">Nandani Gupta</div>
+      <p>Software Developer crafting elegant digital experiences with passion and precision.</p>
+      <div class="footer-socials" style="margin-top:18px;">
+        <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="footer-social-btn" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="LeetCode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
+        </a>
+        <a href="mailto:nandanigupta2212@gmail.com" class="footer-social-btn" aria-label="Email">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>More</h5>
+      <ul>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="leetcode.html">LeetCode</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="https://github.com/nandani2203" target="_blank" rel="noopener">GitHub Profile</a></li>
+        <li><a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Nandani Gupta. All rights reserved.</span>
+    <span>Built with passion, code &amp; ☕</span>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+  SCRIPTS — loaded in dependency order
+═══════════════════════════════════════════ -->
+<script src="particles.js?v=6"></script>
+<script src="main.js?v=6"></script>
+
+</body>
+</html>

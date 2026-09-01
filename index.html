@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<link rel="stylesheet" href="styles.css"/>
+<link rel="stylesheet" href="styles.css?v=6"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css"/>
 <script data-goatcounter="https://nandanigupta.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -17,19 +17,18 @@
 
 <!-- PARTICLE CANVAS -->
 <canvas id="particle-canvas"></canvas>
-
 <!-- NAVBAR -->
 <nav id="navbar" role="navigation" aria-label="Main navigation">
   <div class="nav-logo">NG</div>
   <ul class="nav-links" id="nav-links">
-    <li><a href="#hero" class="active">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#leetcode">LeetCode</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#skills">Skills</a></li>
+    <li><a href="experience.html">Experience</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="publications.html">Publications</a></li>
+    <li><a href="leetcode.html">LeetCode</a></li>
+    <li><a href="contact.html">Contact</a></li>
   </ul>
   <div class="nav-right">
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">🌙</button>
@@ -41,19 +40,16 @@
 
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
-  <a href="#hero" onclick="closeMobileNav()">Home</a>
-  <a href="#about" onclick="closeMobileNav()">About</a>
-  <a href="#skills" onclick="closeMobileNav()">Skills</a>
-  <a href="#experience" onclick="closeMobileNav()">Experience</a>
-  <a href="#projects" onclick="closeMobileNav()">Projects</a>
-  <a href="#publications" onclick="closeMobileNav()">Publications</a>
-  <a href="#leetcode" onclick="closeMobileNav()">LeetCode</a>
-  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="index.html#about" onclick="closeMobileNav()">About</a>
+  <a href="index.html#skills" onclick="closeMobileNav()">Skills</a>
+  <a href="experience.html" onclick="closeMobileNav()">Experience</a>
+  <a href="projects.html" onclick="closeMobileNav()">Projects</a>
+  <a href="publications.html" onclick="closeMobileNav()">Publications</a>
+  <a href="leetcode.html" onclick="closeMobileNav()">LeetCode</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
 </div>
 
-<!-- ═══════════════════════════════════════════
-  HERO SECTION
-═══════════════════════════════════════════ -->
 <section id="hero">
   <canvas id="hero-canvas"></canvas>
   <div class="hero-content">
@@ -73,11 +69,11 @@
         <span class="typing-cursor"></span>
       </div>
       <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">
+        <a href="projects.html" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
           View Projects
         </a>
-        <a href="#contact" class="btn btn-secondary">
+        <a href="contact.html" class="btn btn-secondary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Contact Me
         </a>
@@ -92,7 +88,7 @@
         <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="social-link" aria-label="LeetCode" title="LeetCode">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
         </a>
-        <a href="mailto:nandanigupta2203@gmail.com" class="social-link" aria-label="Email" title="Email">
+        <a href="mailto:nandanigupta2212@gmail.com" class="social-link" aria-label="Email" title="Email">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
@@ -125,9 +121,6 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  ABOUT SECTION
-═══════════════════════════════════════════ -->
 <section id="about">
   <div class="glow-orb glow-orb-1"></div>
   <div class="glow-orb glow-orb-2"></div>
@@ -156,43 +149,48 @@
       </div>
       <div class="about-content reveal-right">
         <p class="about-bio">
-          Hi, I'm Nandani Gupta. I'm a <strong>Software Engineer</strong> from <strong>IIT Jammu</strong> who loves building things that actually work in production. I spend most of my time at the intersection of <strong>AI and backend engineering</strong>, building intelligent pipelines and distributed systems that scale. I pick up new stacks fast, take full ownership of everything I ship, and genuinely enjoy going from zero to something real.
+          I'm drawn to the gap between <strong>"it runs"</strong> and <strong>"it's actually correct"</strong> — and every system I've touched so far has had one somewhere. Duplicated logic quietly turning into an audit risk. A cache layer that can drift from the source of truth without anyone noticing until it's too late. A pipeline reprocessing the same data on loop, burning compute for no reason. Different systems, same instinct: find where the invisible failure lives, and rebuild it so it can't happen again.
         </p>
         <p class="about-bio">
-          From <strong>AI/LLM platforms</strong> and <strong>fintech systems</strong> to <strong>healthcare SaaS</strong> and <strong>low-level systems programming</strong>, I've built across domains and there's always something new in the works. I've done research at Hanyang University, South Korea, solved 400+ problems on LeetCode, and published in Springer SCOPUS, the kind of things that show up when you're genuinely curious and don't stop halfway.
+          In just over a year, that instinct has taken me across <strong>encryption architecture</strong>, <strong>distributed billing systems</strong>, <strong>RAG and retrieval infra</strong>, and <strong>applied ML with explainability</strong> built in — not by staying in one lane, but by chasing the same underlying problem wherever it shows up: systems that look fine on the surface and aren't, underneath.
         </p>
         <p class="about-bio">
-          <strong>Curiosity</strong> keeps me going. There's always a harder problem to solve, a better way to design something, a new stack worth learning. That energy is what drives everything I do. If something here resonates. Let's connect and build something great together.
+          That's what I want to bring to a team. Not just code that ships, but a habit of catching the failure mode before it finds you.
         </p>
+        <div style="margin-top:4px;padding:11px 16px;background:var(--code-bg);border-radius:12px;border:1px solid var(--border-color);">
+          <p class="mono" style="font-size:0.72rem;color:var(--text-secondary);line-height:1.6;">
+            Python, Go, C++ <span style="color:var(--accent-primary);">|</span> Django, FastAPI, async systems <span style="color:var(--accent-primary);">|</span> PostgreSQL, Redis, Docker, AWS <span style="color:var(--accent-primary);">|</span> RAG, vector databases
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  STATS STRIP
-═══════════════════════════════════════════ -->
 <section id="stats" class="stats-strip">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-item reveal">
         <div class="stat-num" id="stat-views">—</div>
         <div class="stat-label">Website Views</div>
-        <div class="stat-meta"><span class="live-dot"></span>Live · All time</div>
+        <div class="stat-meta"><span class="live-dot"></span>All-time total</div>
       </div>
       <div class="stat-divider"></div>
       <div class="stat-item reveal" style="transition-delay:0.12s">
-        <div class="stat-num" id="stat-repos">—</div>
+        <div class="stat-num" id="stat-repos">16</div>
         <div class="stat-label">Public Repos</div>
         <div class="stat-meta"><span class="live-dot"></span>Live · GitHub</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item reveal" style="transition-delay:0.24s">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">LeetCode Solved</div>
+        <div class="stat-meta"><a href="leetcode.html" style="color:inherit;">View journey →</a></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  SKILLS SECTION
-═══════════════════════════════════════════ -->
 <section id="skills">
   <div class="container">
     <div class="reveal" style="margin-bottom:64px;">
@@ -200,57 +198,84 @@
       <h2 class="section-title">Skills &amp; <span class="highlight">Technologies</span></h2>
       <p class="section-subtitle">Technologies I use to build robust, scalable systems — from backend infrastructure to AI pipelines.</p>
     </div>
-    <div class="sk-cards">
+    <div class="sk-cards sk-cards-stack">
 
       <!-- Card 1: Languages -->
       <div class="sk-card reveal">
         <h3 class="sk-card-title">Languages</h3>
-        <div class="sk-icons-grid">
+        <div class="sk-carousel" data-carousel>
+        <button type="button" class="sk-carousel-arrow sk-carousel-prev" aria-label="Scroll left">&lsaquo;</button>
+        <div class="sk-carousel-viewport">
+          <div class="sk-icons-grid sk-carousel-track">
           <div class="sk-icon-item"><i class="devicon-python-plain colored"></i><span>Python</span></div>
           <div class="sk-icon-item"><i class="devicon-cplusplus-plain colored"></i><span>C++</span></div>
-          <div class="sk-icon-item"><i class="devicon-c-plain colored"></i><span>C</span></div>
+          <div class="sk-icon-item"><i class="devicon-go-plain colored"></i><span>Go</span></div>
           <div class="sk-icon-item"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
           <div class="sk-icon-item"><i class="devicon-java-plain colored"></i><span>Java</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#4f9eff,#3b82f6);">SQL</div><span>SQL</span></div>
+          </div>
         </div>
+        <button type="button" class="sk-carousel-arrow sk-carousel-next" aria-label="Scroll right">&rsaquo;</button>
+      </div>
       </div>
 
       <!-- Card 2: Backend & APIs -->
       <div class="sk-card reveal" style="transition-delay:0.08s">
         <h3 class="sk-card-title">Backend &amp; APIs</h3>
-        <div class="sk-icons-grid">
+        <div class="sk-carousel" data-carousel>
+        <button type="button" class="sk-carousel-arrow sk-carousel-prev" aria-label="Scroll left">&lsaquo;</button>
+        <div class="sk-carousel-viewport">
+          <div class="sk-icons-grid sk-carousel-track">
           <div class="sk-icon-item"><i class="devicon-fastapi-plain colored"></i><span>FastAPI</span></div>
+          <div class="sk-icon-item"><i class="devicon-django-plain colored"></i><span>Django</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#84c440,#5a8f2b);">CL</div><span>Celery</span></div>
           <div class="sk-icon-item"><i class="devicon-nodejs-plain colored"></i><span>Node.js</span></div>
           <div class="sk-icon-item sk-invert"><i class="devicon-express-original"></i><span>Express</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">API</div><span>REST APIs</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#22d3ee,#0891b2);">MS</div><span>Microservices</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#60a5fa,#3b82f6);">AIO</div><span>AsyncIO</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#e879f9,#c026d3);">BA</div><span>Boost.Asio</span></div>
+          </div>
         </div>
+        <button type="button" class="sk-carousel-arrow sk-carousel-next" aria-label="Scroll right">&rsaquo;</button>
+      </div>
       </div>
 
       <!-- Card 3: AI / ML -->
       <div class="sk-card reveal" style="transition-delay:0.16s">
         <h3 class="sk-card-title">AI &amp; ML</h3>
-        <div class="sk-icons-grid">
+        <div class="sk-carousel" data-carousel>
+        <button type="button" class="sk-carousel-arrow sk-carousel-prev" aria-label="Scroll left">&lsaquo;</button>
+        <div class="sk-carousel-viewport">
+          <div class="sk-icons-grid sk-carousel-track">
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#34d399,#059669);">LC</div><span>LangChain</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#a78bfa,#7c3aed);">RAG</div><span>RAG</span></div>
-          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#22d3ee,#0891b2);">OAI</div><span>OpenAI API</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#818cf8,#6366f1);">VDB</div><span>Vector DBs</span></div>
           <div class="sk-icon-item"><i class="devicon-scikitlearn-plain colored"></i><span>Scikit-learn</span></div>
           <div class="sk-icon-item"><i class="devicon-numpy-plain colored"></i><span>NumPy/SciPy</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#f59e0b,#d97706);">SH</div><span>SHAP</span></div>
+          </div>
         </div>
+        <button type="button" class="sk-carousel-arrow sk-carousel-next" aria-label="Scroll right">&rsaquo;</button>
+      </div>
       </div>
 
       <!-- Card 4: Infra & Tools -->
       <div class="sk-card reveal" style="transition-delay:0.24s">
         <h3 class="sk-card-title">Infra &amp; Tools</h3>
-        <div class="sk-icons-grid">
+        <div class="sk-carousel" data-carousel>
+        <button type="button" class="sk-carousel-arrow sk-carousel-prev" aria-label="Scroll left">&lsaquo;</button>
+        <div class="sk-carousel-viewport">
+          <div class="sk-icons-grid sk-carousel-track">
           <div class="sk-icon-item"><i class="devicon-postgresql-plain colored"></i><span>PostgreSQL</span></div>
           <div class="sk-icon-item"><i class="devicon-redis-plain colored"></i><span>Redis</span></div>
           <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#ef4444,#dc2626);">RS</div><span>Redis Streams</span></div>
           <div class="sk-icon-item"><i class="devicon-sqlalchemy-plain colored"></i><span>SQLAlchemy</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#ff9900,#d87c00);">AWS</div><span>AWS</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#26c6da,#0891b2);">AX</div><span>Apache APISIX</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#5b9bd5,#3a5f8a);">ETC</div><span>etcd</span></div>
+          <div class="sk-icon-item"><i class="devicon-lua-plain colored"></i><span>Lua</span></div>
+          <div class="sk-icon-item"><div class="sk-noicon" style="background:linear-gradient(135deg,#525252,#262626);">AES</div><span>AES-256</span></div>
           <div class="sk-icon-item"><i class="devicon-react-original colored"></i><span>React.js</span></div>
           <div class="sk-icon-item"><i class="devicon-html5-plain colored"></i><span>HTML5</span></div>
           <div class="sk-icon-item"><i class="devicon-css3-plain colored"></i><span>CSS3</span></div>
@@ -259,101 +284,16 @@
           <div class="sk-icon-item"><i class="devicon-git-plain colored"></i><span>Git</span></div>
           <div class="sk-icon-item sk-invert"><i class="devicon-github-original"></i><span>GitHub</span></div>
           <div class="sk-icon-item"><i class="devicon-githubactions-plain colored"></i><span>GH Actions</span></div>
+          </div>
         </div>
+        <button type="button" class="sk-carousel-arrow sk-carousel-next" aria-label="Scroll right">&rsaquo;</button>
+      </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  EXPERIENCE SECTION
-═══════════════════════════════════════════ -->
-<section id="experience">
-  <div class="glow-orb glow-orb-1"></div>
-  <div class="container">
-    <div class="reveal" style="margin-bottom:56px;">
-      <div class="section-tag">Career</div>
-      <h2 class="section-title">Work <span class="highlight">Experience</span></h2>
-      <p class="section-subtitle">My professional journey — building products, growing teams, and shipping impactful solutions.</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item reveal">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-role">Backend Engineer – AI/RAG Platform</span>
-            <span class="timeline-date">July 2025 – Present</span>
-          </div>
-          <div class="timeline-company">Lohum Cleantech Pvt. Ltd.</div>
-          <div class="timeline-location">📍 Greater Noida, India</div>
-          <ul class="timeline-points">
-            <li> Designed backend services for an enterprise RAG-based policy intelligence platform indexing 500+ government releases into a vector database for low-latency semantic retrieval, and engineered an automated ingestion pipeline in Python polling PIB releases hourly (24×/day) with document diffing, chunking, and embedding generation.</li>
-            <li> Built an email ingestion microservice monitoring shared mailboxes, parsing communications, and triggering asynchronous preprocessing and embedding pipelines using AsyncIO, improving indexing throughput and automating policy intelligence surfacing</li>
-            <li> Designed microservice components supporting concurrent query processing and high-availability semantic search systems.</li>
-          </ul>
-          <div class="tech-stack-badges">
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">FastAPI</span>
-            <span class="tech-badge">LangChain</span>
-            <span class="tech-badge">OpenAI API</span>
-            <span class="tech-badge">Vector DB</span>
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">AsyncIO</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item reveal" style="transition-delay:0.15s">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-role">Software Developer Intern</span>
-            <span class="timeline-date">May 2024 – July 2024</span>
-          </div>
-          <div class="timeline-company">Arvon Web Solutions</div>
-          <div class="timeline-location">📍 Remote</div>
-          <ul class="timeline-points">
-            <li> Built backend RESTful APIs in C++ using Boost.Asio to power a SaaS hospital management platform, implemented patient records, appointment scheduling, and doctor availability modules, and designed normalized PostgreSQL schemas with structured JSON-based API responses.</li>
-            <li>Wrote automated data validation scripts and executed unit and integration tests across all endpoints, and wrote technical documentation for all API modules ensuring reproducible deployments and consistent engineering standards</li>
-          </ul>
-          <div class="tech-stack-badges">
-            <span class="tech-badge">C++</span>
-            <span class="tech-badge">Boost.Asio</span>
-            <span class="tech-badge">REST APIs</span>
-            <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">Docker</span>
-            <span class="tech-badge">Git</span>
-          </div>
-        </div>
-      </div>
-      <div class="timeline-item reveal" style="transition-delay:0.3s">
-        <div class="timeline-dot"></div>
-        <div class="timeline-card">
-          <div class="timeline-meta">
-            <span class="timeline-role">Research Intern</span>
-            <span class="timeline-date">May 2024 – July 2024</span>
-          </div>
-          <div class="timeline-company">Hanyang University</div>
-          <div class="timeline-location">📍 Seoul, South Korea</div>
-          <ul class="timeline-points">
-            <li>Developed a filter paper-based sensor for chloride ion detection in concrete to assess corrosion risk, optimized protocols using 0.01 N Silver Nitrate and 0.3 N Nitric Acid, replaced toxic reagents with safer alternatives, and validated sensor performance via calibration curve modelling and error analysis in Python (NumPy, SciPy) within a cross-functional international research team</li>
-          </ul>
-          <div class="tech-stack-badges">
-            <span class="tech-badge">Python</span>
-            <span class="tech-badge">MATLAB</span>
-            <span class="tech-badge">NumPy</span>
-            <span class="tech-badge">SciPy</span>
-            <span class="tech-badge">Data Analysis</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-  PROJECTS SECTION
-═══════════════════════════════════════════ -->
 <section id="projects">
   <div class="container">
     <div class="reveal" style="margin-bottom:56px;">
@@ -361,323 +301,16 @@
       <h2 class="section-title">Featured <span class="highlight">Projects</span></h2>
       <p class="section-subtitle">A selection of projects that showcase my technical range, design thinking, and engineering depth.</p>
     </div>
-    <div class="projects-grid">
-      <div class="project-card featured reveal">
-        <div class="project-thumbnail">
-          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#0a1628 0%,#1a237e 40%,#4a148c 100%);position:absolute;inset:0;"></div>
-          <div class="project-thumb-icon">🛡️</div>
-          <span class="project-tag tag-featured">Featured ⭐</span>
-        </div>
-        <div class="project-body">
-          <h3 class="project-name">Fintech Fraud Risk Engine</h3>
-          <p class="project-desc">Real-time fraud detection platform integrating a Logistic Regression model (ROC-AUC 0.98), KYC profiling, behavioral velocity analytics, and SHAP explainability. Architected as modular FastAPI microservices with event-driven ingestion via Redis Streams, SQLAlchemy-based persistence, and Dockerized deployment.</p>
-          <div class="project-techs">
-            <span class="project-tech-chip">Python</span>
-            <span class="project-tech-chip">FastAPI</span>
-            <span class="project-tech-chip">Scikit-learn</span>
-            <span class="project-tech-chip">Redis Streams</span>
-            <span class="project-tech-chip">SQLAlchemy</span>
-            <span class="project-tech-chip">Docker</span>
-            <span class="project-tech-chip">SHAP</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/nandani2203/fintech-fraud-risk-engine" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.1s">
-        <div class="project-thumbnail">
-          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#001a33 0%,#00356b 50%,#0052a3 100%);position:absolute;inset:0;"></div>
-          <div class="project-thumb-icon">🔗</div>
-          <span class="project-tag tag-fullstack">Backend</span>
-        </div>
-        <div class="project-body">
-          <h3 class="project-name">High-Scale URL Shortener</h3>
-          <p class="project-desc">High-throughput URL shortening service in Golang using the Gin framework, with Redis-based caching for low-latency redirection and a Bloom Filter for O(1) alias existence checks, eliminating cache penetration under high concurrent traffic.</p>
-          <div class="project-techs">
-            <span class="project-tech-chip">Golang</span>
-            <span class="project-tech-chip">Gin</span>
-            <span class="project-tech-chip">Redis</span>
-            <span class="project-tech-chip">PostgreSQL</span>
-            <span class="project-tech-chip">Bloom Filter</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/nandani2203/url_shortener" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.2s">
-        <div class="project-thumbnail">
-          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#1a237e 0%,#283593 50%,#3f51b5 100%);position:absolute;inset:0;"></div>
-          <div class="project-thumb-icon">⚙️</div>
-          <span class="project-tag tag-fullstack">Systems</span>
-        </div>
-        <div class="project-body">
-          <h3 class="project-name">Multithreaded Producer-Consumer System</h3>
-          <p class="project-desc">Implementation of the classic Producer-Consumer concurrency problem in Java using threads, synchronized blocks, and inter-thread communication for safe management of a shared bounded buffer, demonstrating core OS concurrency and thread-safety principles.</p>
-          <div class="project-techs">
-            <span class="project-tech-chip">Java</span>
-            <span class="project-tech-chip">Multithreading</span>
-            <span class="project-tech-chip">Synchronization</span>
-            <span class="project-tech-chip">Concurrency</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/nandani2203/Multithreaded-Producer-Consumer-System" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:0.3s">
-        <div class="project-thumbnail">
-          <div class="project-thumbnail-bg" style="background:linear-gradient(135deg,#4a0072 0%,#6a1b9a 50%,#8e24aa 100%);position:absolute;inset:0;"></div>
-          <div class="project-thumb-icon">🏢</div>
-          <span class="project-tag tag-ml">Systems</span>
-        </div>
-        <div class="project-body">
-          <h3 class="project-name">Multiple Elevator System</h3>
-          <p class="project-desc">Multi-elevator control system in C++ using OOP principles and a score-based scheduling algorithm to efficiently coordinate concurrent floor requests. Validated with a dedicated unit test suite covering all state-transition and scheduling edge cases.</p>
-          <div class="project-techs">
-            <span class="project-tech-chip">C++</span>
-            <span class="project-tech-chip">OOP</span>
-            <span class="project-tech-chip">Scheduling Algorithms</span>
-            <span class="project-tech-chip">Unit Testing</span>
-            <span class="project-tech-chip">Git</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/nandani2203/Multiple-Elevator-System" target="_blank" rel="noopener" class="btn-sm btn-sm-primary">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="projects-grid uniform-grid" id="featured-projects-grid"></div>
     <div style="text-align:center;margin-top:40px;" class="reveal">
-      <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="btn btn-secondary">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        View All on GitHub
+      <a href="projects.html" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+        View All Projects
       </a>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════
-  PUBLICATIONS SECTION
-═══════════════════════════════════════════ -->
-<section id="publications">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:56px;">
-      <div class="section-tag">Publication</div>
-      <h2 class="section-title"><span class="highlight">Publication</span></h2>
-      <p class="section-subtitle">Peer-reviewed research published in international academic venues.</p>
-    </div>
-    <div class="pub-list">
-      <div class="pub-card reveal">
-        <div class="pub-year-badge">2023</div>
-        <div class="pub-content">
-          <h3 class="pub-title">Numerical Investigation of Spray Characteristics of Lean-Burn Gas Turbine Injector</h3>
-          <div class="pub-venue">📖 Springer SCOPUS — Proceedings of the 10th International and 50th National Conference on Fluid Mechanics and Fluid Power (FMFP), December 2023, IIT Jodhpur</div>
-          <p class="pub-abstract">This paper presents a numerical investigation into the spray characteristics of a lean-burn gas turbine injector. The study analyses atomization behaviour, droplet size distribution, and spray penetration patterns under varying operating conditions, contributing to improved combustion efficiency and reduced emissions in next-generation gas turbine systems.</p>
-          <div class="pub-actions">
-            <span class="pub-badge">Springer SCOPUS</span>
-            <a href="https://link.springer.com/chapter/10.1007/978-981-97-6783-0_51" target="_blank" rel="noopener" class="btn-sm btn-sm-ghost" style="font-size:0.75rem;">📄 View Paper</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-  LEETCODE SECTION
-═══════════════════════════════════════════ -->
-<section id="leetcode">
-  <div class="glow-orb glow-orb-2"></div>
-  <div class="container">
-    <div class="reveal" style="margin-bottom:56px;">
-      <div class="section-tag">Problem Solving</div>
-      <h2 class="section-title">LeetCode <span class="highlight">Journey</span></h2>
-      <p class="section-subtitle">Sharpening algorithmic thinking and problem-solving skills — one challenge at a time.</p>
-    </div>
-    <div class="leetcode-grid">
-      <div class="leetcode-hero-card reveal">
-        <div class="lc-logo" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-        </div>
-        <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:12px;">@Nandani22</h3>
-        <p class="lc-tagline">Consistent problem solver focused on algorithms, data structures, and analytical thinking. Building a solid foundation in competitive programming.</p>
-        <div class="lc-stats">
-          <div class="lc-stat">
-            <div class="lc-stat-num" id="lc-total">400+</div>
-            <div class="lc-stat-label">Problems Solved</div>
-          </div>
-          <div class="lc-stat">
-            <div class="lc-stat-num" style="background:linear-gradient(135deg,#ffc01e,#ff9800);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Top</div>
-            <div class="lc-stat-label" style="color:#ffc01e;">Rated</div>
-          </div>
-          <div class="lc-stat">
-            <div class="lc-stat-num" style="background:linear-gradient(135deg,#22d3ee,#0891b2);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">🔥</div>
-            <div class="lc-stat-label">Active Streak</div>
-          </div>
-        </div>
-        <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;margin-bottom:0;">
-          View LeetCode Profile
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <div class="lc-diff-card reveal" style="transition-delay:0.15s">
-        <h4 class="lc-diff-title">Problem Difficulty Breakdown</h4>
-        <div class="lc-diff-bar">
-          <div class="lc-diff-bar-header">
-            <span class="diff-easy" style="font-weight:600;">Easy</span>
-            <span style="font-size:0.8rem;color:var(--text-muted);">~130 solved</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill fill-easy" style="width:0%" data-width="72%"></div>
-          </div>
-        </div>
-        <div class="lc-diff-bar">
-          <div class="lc-diff-bar-header">
-            <span class="diff-medium" style="font-weight:600;">Medium</span>
-            <span style="font-size:0.8rem;color:var(--text-muted);">~130 solved</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill fill-medium" style="width:0%" data-width="58%"></div>
-          </div>
-        </div>
-        <div class="lc-diff-bar">
-          <div class="lc-diff-bar-header">
-            <span class="diff-hard" style="font-weight:600;">Hard</span>
-            <span style="font-size:0.8rem;color:var(--text-muted);">~40 solved</span>
-          </div>
-          <div class="bar-track">
-            <div class="bar-fill fill-hard" style="width:0%" data-width="25%"></div>
-          </div>
-        </div>
-        <div style="margin-top:28px;padding:18px;background:var(--code-bg);border-radius:12px;border:1px solid var(--border-color);">
-          <div style="font-size:0.78rem;color:var(--text-muted);font-family:'JetBrains Mono',monospace;margin-bottom:8px;">// Approach Philosophy</div>
-          <p style="font-size:0.875rem;color:var(--text-secondary);line-height:1.65;font-style:italic;">"Every problem is an opportunity to think differently. I focus on understanding patterns over memorizing solutions."</p>
-        </div>
-      </div>
-      <div class="lc-topics reveal" style="transition-delay:0.25s">
-        <h4 style="font-size:1rem;font-weight:700;">Core Topics Mastered</h4>
-        <div class="topic-chips">
-          <span class="topic-chip">Arrays &amp; Hashing</span>
-          <span class="topic-chip">Two Pointers</span>
-          <span class="topic-chip">Sliding Window</span>
-          <span class="topic-chip">Stack</span>
-          <span class="topic-chip">Binary Search</span>
-          <span class="topic-chip">Linked List</span>
-          <span class="topic-chip">Trees</span>
-          <span class="topic-chip">Tries</span>
-          <span class="topic-chip">Backtracking</span>
-          <span class="topic-chip">Graphs (BFS/DFS)</span>
-          <span class="topic-chip">Dynamic Programming</span>
-          <span class="topic-chip">Greedy</span>
-          <span class="topic-chip">Heap / Priority Queue</span>
-          <span class="topic-chip">Bit Manipulation</span>
-          <span class="topic-chip">Math &amp; Intervals</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-  CONTACT SECTION
-═══════════════════════════════════════════ -->
-<section id="contact">
-  <div class="container">
-    <div class="reveal" style="margin-bottom:56px;">
-      <div class="section-tag">Get In Touch</div>
-      <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
-      <p class="section-subtitle">Open to exciting opportunities, collaborations, and meaningful product work.</p>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info reveal-left">
-        <p class="contact-intro">Whether you have a project in mind, want to collaborate or just want to say hello, my inbox is always open. I'd love to connect and create something great together.</p>
-        <div class="contact-links">
-          <a href="mailto:nandanigupta2203@gmail.com" class="contact-link-item">
-            <div class="contact-link-icon">📧</div>
-            <div class="contact-link-text">
-              <div class="contact-link-type">Email</div>
-              <div class="contact-link-value">nandanigupta2203@gmail.com</div>
-            </div>
-          </a>
-          <a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon" style="background:linear-gradient(135deg,#0077b5,#006097);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <div class="contact-link-type">LinkedIn</div>
-              <div class="contact-link-value">nandani-gupta</div>
-            </div>
-          </a>
-          <a href="https://github.com/nandani2203" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon" style="background:linear-gradient(135deg,#24292e,#404448);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <div class="contact-link-type">GitHub</div>
-              <div class="contact-link-value">nandani2203</div>
-            </div>
-          </a>
-          <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="contact-link-item">
-            <div class="contact-link-icon" style="background:linear-gradient(135deg,#ffa116,#ff6b35);">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
-            </div>
-            <div class="contact-link-text">
-              <div class="contact-link-type">LeetCode</div>
-              <div class="contact-link-value">Nandani22</div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="contact-form reveal-right">
-        <h3 class="form-title">Send a Message</h3>
-        <form id="contact-form" onsubmit="handleFormSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required/>
-            </div>
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Collaboration / Opportunity / Hello!" required/>
-          </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Tell me about your project or idea..." required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="send-btn">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Send Message
-          </button>
-          <div id="form-success" style="display:none;margin-top:16px;padding:14px 18px;background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.3);border-radius:11px;color:#10b981;font-size:0.875rem;text-align:center;">
-            ✅ Message sent! I'll get back to you soon.
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════════
-  FOOTER
-═══════════════════════════════════════════ -->
 <footer role="contentinfo">
   <div class="footer-inner">
     <div class="footer-brand">
@@ -693,7 +326,7 @@
         <a href="https://leetcode.com/u/Nandani22/" target="_blank" rel="noopener" class="footer-social-btn" aria-label="LeetCode">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/></svg>
         </a>
-        <a href="mailto:nandanigupta2203@gmail.com" class="footer-social-btn" aria-label="Email">
+        <a href="mailto:nandanigupta2212@gmail.com" class="footer-social-btn" aria-label="Email">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
       </div>
@@ -701,19 +334,19 @@
     <div class="footer-col">
       <h5>Quick Links</h5>
       <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#skills">Skills</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="projects.html">Projects</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>More</h5>
       <ul>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#leetcode">LeetCode</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="leetcode.html">LeetCode</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li><a href="https://github.com/nandani2203" target="_blank" rel="noopener">GitHub Profile</a></li>
         <li><a href="https://www.linkedin.com/in/nandani-gupta~/" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
@@ -728,11 +361,14 @@
 <!-- ═══════════════════════════════════════════
   SCRIPTS — loaded in dependency order
 ═══════════════════════════════════════════ -->
-<script src="particles.js"></script>
-<script src="hero3d.js"></script>
-<script src="avatar.js"></script>
-<script src="main.js"></script>
-<script src="stats.js"></script>
+<script src="particles.js?v=6"></script>
+<script src="hero3d.js?v=6"></script>
+<script src="avatar.js?v=6"></script>
+<script src="main.js?v=6"></script>
+<script src="skills-carousel.js?v=6"></script>
+<script src="stats.js?v=6"></script>
+<script src="projects-data.js?v=6"></script>
+<script src="home-projects.js?v=6"></script>
 
 </body>
 </html>

@@ -1,0 +1,23 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="rgba(255,255,255,0.10)"/>
+    </pattern>
+  </defs>
+  <rect width="340" height="200" fill="url(#g)"/>
+  <rect width="340" height="200" fill="url(#dots)"/>
+  <rect x="55" y="50" width="70" height="110" rx="8" fill="rgba(10,22,50,0.45)" stroke="rgba(255,255,255,0.35)"/>
+  <rect x="135" y="50" width="70" height="110" rx="8" fill="rgba(10,22,50,0.45)" stroke="rgba(255,255,255,0.35)"/>
+  <rect x="215" y="50" width="70" height="110" rx="8" fill="rgba(10,22,50,0.45)" stroke="rgba(255,255,255,0.35)"/>
+  <rect x="63" y="60" width="54" height="20" rx="4" fill="#22d3ee" opacity="0.85"/>
+  <rect x="63" y="86" width="54" height="20" rx="4" fill="#fff" opacity="0.85"/>
+  <rect x="143" y="60" width="54" height="20" rx="4" fill="#fbbf24" opacity="0.85"/>
+  <rect x="143" y="86" width="54" height="20" rx="4" fill="#a78bfa" opacity="0.85"/>
+  <rect x="143" y="112" width="54" height="20" rx="4" fill="#22d3ee" opacity="0.6"/>
+  <rect x="223" y="60" width="54" height="20" rx="4" fill="#34d399" opacity="0.85"/>
+</svg>

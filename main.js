@@ -43,24 +43,45 @@ function closeMobileNav() {
   NAVBAR SCROLL + ACTIVE LINKS
 ──────────────────────────────────────────────*/
 const navbar = document.getElementById('navbar');
-const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('#nav-links a, .mobile-nav a');
 
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
-  updateActiveNav();
 }, { passive: true });
 
-function updateActiveNav() {
-  let current = '';
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-    if (window.scrollY >= sectionTop) current = section.getAttribute('id');
+// This is a multi-page static site (no router). Most nav links point to a
+// whole page, so the active link is just whichever href matches the current
+// filename. But About/Skills/Publications are anchors on the Home page
+// itself (index.html#about etc.), so on Home specifically we scroll-spy
+// among those sections instead — page-matching alone would leave "Home"
+// permanently active no matter which of those sections is in view.
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+const isHome = currentPage === 'index.html';
+const homeAnchorSections = isHome
+  ? ['about', 'skills'].map(id => document.getElementById(id)).filter(Boolean)
+  : [];
+
+function setActiveNavByPage() {
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === currentPage);
+  });
+}
+
+function updateHomeScrollSpy() {
+  let current = 'index.html';
+  homeAnchorSections.forEach(section => {
+    if (window.scrollY >= section.offsetTop - 140) current = `index.html#${section.id}`;
   });
   navLinks.forEach(link => {
-    link.classList.remove('active');
-    if (link.getAttribute('href') === '#' + current) link.classList.add('active');
+    link.classList.toggle('active', link.getAttribute('href') === current);
   });
+}
+
+if (isHome) {
+  updateHomeScrollSpy();
+  window.addEventListener('scroll', updateHomeScrollSpy, { passive: true });
+} else {
+  setActiveNavByPage();
 }
 
 /*──────────────────────────────────────────────
@@ -70,9 +91,6 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      if (entry.target.querySelector && entry.target.querySelector('.bar-fill')) {
-        animateBars();
-      }
     }
   });
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
@@ -80,24 +98,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
   revealObserver.observe(el);
 });
-
-// Also observe LeetCode section specifically
-const lcSection = document.getElementById('leetcode');
-if (lcSection) {
-  const lcObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) animateBars();
-    });
-  }, { threshold: 0.2 });
-  lcObserver.observe(lcSection);
-}
-
-function animateBars() {
-  document.querySelectorAll('.bar-fill[data-width]').forEach(bar => {
-    const width = bar.getAttribute('data-width');
-    setTimeout(() => { bar.style.width = width; }, 100);
-  });
-}
 
 /*──────────────────────────────────────────────
   TYPING EFFECT
@@ -117,7 +117,7 @@ function typeTitle() {
   }
   setTimeout(typeTitle, isDeleting ? 55 : 90);
 }
-setTimeout(typeTitle, 1500);
+if (typedEl) setTimeout(typeTitle, 1500);
 
 /*──────────────────────────────────────────────
   3D CARD TILT

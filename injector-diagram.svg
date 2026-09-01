@@ -1,0 +1,43 @@
+<svg viewBox="0 0 320 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schematic illustration of a lean-burn injector: swirler, spray cone with droplets, and central toroidal recirculation zone">
+  <rect x="0" y="0" width="320" height="280" rx="18" fill="#0a1628"/>
+  <line x1="160" y1="14" x2="160" y2="256" stroke="#4f9eff" stroke-width="1" stroke-dasharray="2,5" opacity="0.35"/>
+
+  <!-- injector body -->
+  <path d="M 108 28 L 212 28 L 178 78 L 142 78 Z" fill="#16233f" stroke="#4f9eff" stroke-width="1.5"/>
+  <rect x="150" y="78" width="20" height="10" fill="#16233f" stroke="#4f9eff" stroke-width="1.5"/>
+
+  <!-- swirler rings (axial + radial) -->
+  <ellipse cx="160" cy="60" rx="40" ry="7" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <ellipse cx="160" cy="48" rx="26" ry="5" fill="none" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+  <!-- spray cone -->
+  <path d="M 160 88 L 96 190 M 160 88 L 224 190" stroke="#4f9eff" stroke-width="1.5" opacity="0.6"/>
+
+  <!-- droplets, larger near the cone edge (shear layer), finer toward centre -->
+  <circle cx="108" cy="150" r="4.5" fill="#22d3ee" opacity="0.85"/>
+  <circle cx="212" cy="150" r="4.5" fill="#22d3ee" opacity="0.85"/>
+  <circle cx="120" cy="172" r="3.5" fill="#4f9eff" opacity="0.8"/>
+  <circle cx="200" cy="172" r="3.5" fill="#4f9eff" opacity="0.8"/>
+  <circle cx="98" cy="182" r="3" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="222" cy="182" r="3" fill="#22d3ee" opacity="0.7"/>
+  <circle cx="140" cy="160" r="1.6" fill="#a78bfa" opacity="0.6"/>
+  <circle cx="180" cy="160" r="1.6" fill="#a78bfa" opacity="0.6"/>
+  <circle cx="160" cy="150" r="1.2" fill="#a78bfa" opacity="0.45"/>
+
+  <!-- central toroidal recirculation zone (CTRZ) -->
+  <path d="M 130 130 C 118 145, 120 165, 138 172 C 150 177, 158 172, 158 162" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 190 130 C 202 145, 200 165, 182 172 C 170 177, 162 172, 162 162" fill="none" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto-start-reverse">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- labels -->
+  <text x="160" y="20" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#8bafd4">PILOT INJECTOR</text>
+  <text x="216" y="52" font-family="JetBrains Mono, monospace" font-size="8" fill="#a78bfa">swirler</text>
+  <text x="230" y="140" font-family="JetBrains Mono, monospace" font-size="8" fill="#4f9eff">spray + droplets</text>
+  <text x="160" y="152" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#f59e0b">CTRZ</text>
+  <text x="160" y="268" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#4a6fa5">recreated schematic, not the published figure</text>
+</svg>

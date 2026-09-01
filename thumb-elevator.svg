@@ -1,0 +1,24 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a0072"/>
+      <stop offset="50%" stop-color="#6a1b9a"/>
+      <stop offset="100%" stop-color="#8e24aa"/>
+    </linearGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="rgba(255,255,255,0.10)"/>
+    </pattern>
+  </defs>
+  <rect width="340" height="200" fill="url(#g)"/>
+  <rect width="340" height="200" fill="url(#dots)"/>
+  <rect x="90" y="40" width="160" height="140" fill="rgba(10,22,50,0.45)" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+  <line x1="130" y1="40" x2="130" y2="180" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <line x1="170" y1="40" x2="170" y2="180" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <line x1="210" y1="40" x2="210" y2="180" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <line x1="90" y1="75" x2="250" y2="75" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="90" y1="110" x2="250" y2="110" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <line x1="90" y1="145" x2="250" y2="145" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="101" y="118" width="20" height="24" rx="2" fill="#22d3ee"/>
+  <rect x="141" y="48" width="20" height="24" rx="2" fill="#a78bfa"/>
+  <rect x="181" y="83" width="20" height="24" rx="2" fill="#22d3ee" opacity="0.8"/>
+</svg>

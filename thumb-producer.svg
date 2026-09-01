@@ -1,0 +1,25 @@
+<svg viewBox="0 0 340 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1a237e"/>
+      <stop offset="50%" stop-color="#283593"/>
+      <stop offset="100%" stop-color="#3f51b5"/>
+    </linearGradient>
+    <pattern id="dots" width="18" height="18" patternUnits="userSpaceOnUse">
+      <circle cx="1.5" cy="1.5" r="1" fill="rgba(255,255,255,0.10)"/>
+    </pattern>
+  </defs>
+  <rect width="340" height="200" fill="url(#g)"/>
+  <rect width="340" height="200" fill="url(#dots)"/>
+  <circle cx="65" cy="100" r="24" fill="rgba(10,22,50,0.55)" stroke="#22d3ee" stroke-width="2"/>
+  <path d="M58 100 h14 M65 93 v14" stroke="#22d3ee" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="275" cy="100" r="24" fill="rgba(10,22,50,0.55)" stroke="#a78bfa" stroke-width="2"/>
+  <path d="M267 100 h16 M279 92 l8 8 -8 8" fill="none" stroke="#a78bfa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="112" y="84" width="26" height="32" rx="4" fill="#4f9eff" opacity="0.9"/>
+  <rect x="144" y="84" width="26" height="32" rx="4" fill="#4f9eff" opacity="0.65"/>
+  <rect x="176" y="84" width="26" height="32" rx="4" fill="#4f9eff" opacity="0.4"/>
+  <rect x="208" y="84" width="18" height="32" rx="4" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <path d="M92 100 h16" stroke="rgba(255,255,255,0.5)" stroke-width="2" marker-end="url(#pc-arrow)"/>
+  <path d="M230 100 h30" stroke="rgba(255,255,255,0.5)" stroke-width="2" marker-end="url(#pc-arrow)"/>
+  <defs><marker id="pc-arrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="rgba(255,255,255,0.6)"/></marker></defs>
+</svg>
