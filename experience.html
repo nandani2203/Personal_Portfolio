@@ -77,24 +77,29 @@
               <div class="exp-card-role">Software Engineer<span class="timeline-current-badge">Current</span></div>
               <div class="exp-card-company">Timble Technologies<span class="exp-card-location">📍 Gurgaon, India</span></div>
             </div>
-            <div class="exp-card-date">May 2026 – Present · 4+ mos</div>
+            <div class="exp-card-date">May 2026 – Present · 7 mos</div>
           </div>
           <ul class="timeline-points">
-            <li>Consolidated 11 duplicate AES-256 encryption plugins into one config-driven Apache APISIX plugin, turning client encryption onboarding into an Admin API config change instead of a code deploy.</li>
-            <li>Built a Redis-to-PostgreSQL wallet sync task (Django/Celery) that rebuilds live balances on cache failure, removing a single point of failure in the prepaid billing flow.</li>
-            <li>Refactored a hardcoded per-vendor response plugin on every route's critical path into a data-driven engine, decoupling vendor onboarding from shared code changes.</li>
-            <li>Eliminated silent data loss in transaction logging and a PII-in-cache exposure, safeguarding billing integrity and customer data.</li>
+            <li>Built a Django/DRF billing platform with an append-only, idempotent PostgreSQL ledger and a Redis fast path that debits wallets atomically in Lua, settled to Postgres by a Celery worker with dead-letter retries so every API call is charged exactly once.</li>
+            <li>Wrote custom Apache APISIX Lua gateway plugins: a fail-closed billing plugin that authorizes before and settles after every vendor call, and one config-driven AES-256 (ECB/GCM/CBC) encryption plugin that replaced duplicate per-client plugins, so encryption onboarding is a config change instead of a deploy.</li>
+            <li>Designed an API Hub wizard that turns a cURL into a live gateway route and a versioned API catalogue entry, with approval workflows, making it the single writer to every gateway and ending config drift between environments.</li>
+            <li>Led the legacy-to-new platform migration: an idempotent batch import of users, clients and prices with a review queue for anything it can't place, plus HMAC-signed server-to-server account handover with single-use sign-in codes.</li>
+            <li>Hardened the platform: RBAC on every endpoint enforced by a build-failing test, secrets moved to AWS Secrets Manager, PII stripped from cached logs, silent transaction-log loss fixed, and slow reports sped up through N+1 removal and indexing.</li>
+            <li>Independently shipped an SMS-link ITR verification feature end to end (frontend, backend, schema, S3, partner API), built a Redis-to-PostgreSQL wallet sync that rebuilds balances on cache failure, and set up CI/CD with GitHub Actions and AWS CodeDeploy.</li>
           </ul>
           <div class="tech-stack-badges">
             <span class="tech-badge">Python</span>
             <span class="tech-badge">Django</span>
+            <span class="tech-badge">DRF</span>
             <span class="tech-badge">Celery</span>
             <span class="tech-badge">Apache APISIX</span>
             <span class="tech-badge">Lua</span>
             <span class="tech-badge">Redis</span>
             <span class="tech-badge">PostgreSQL</span>
-            <span class="tech-badge">etcd</span>
-            <span class="tech-badge">AES-256</span>
+            <span class="tech-badge">React</span>
+            <span class="tech-badge">TypeScript</span>
+            <span class="tech-badge">AWS</span>
+            <span class="tech-badge">GitHub Actions</span>
             <span class="tech-badge">Docker</span>
           </div>
         </div>
